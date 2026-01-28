@@ -1,4 +1,22 @@
 (function(){
+    // Connect dropdown menu
+    const connectBtn = document.getElementById('connect-btn');
+    const connectMenu = document.getElementById('connect-menu');
+
+    connectBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        connectMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function() {
+        connectMenu.classList.remove('active');
+    });
+
+    connectMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // Ginger drawing functionality
     const icon = document.getElementById('ginger-icon');
     const clickMeText = document.getElementById('click-me-text');
     const canvas = document.getElementById('draw-canvas');

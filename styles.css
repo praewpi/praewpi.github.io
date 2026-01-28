@@ -43,6 +43,61 @@ nav a:hover {
     opacity: 0.7;
 }
 
+.connect-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#connect-btn {
+    background: none;
+    border: none;
+    color: #756f6f;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+    padding: 0;
+}
+
+#connect-btn:hover {
+    opacity: 0.7;
+}
+
+.connect-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /* background-color: #fbf1dc;
+    border: 2px solid #000; */
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.connect-menu.active {
+    display: flex;
+}
+
+.connect-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    padding: 0.5rem;
+}
+
+.connect-menu a:hover {
+    opacity: 0.7;
+}
+
 #clear-btn {
     background: none;
     border: none;
@@ -106,7 +161,7 @@ main h1 {
     cursor: pointer;
     position: absolute;
     left: 50%;
-    top: 58%;
+    top: 59%;
     transform: translateX(-50%);
     margin: 0;
 }
@@ -129,7 +184,7 @@ main h1 {
     margin-top: 1.5rem;
     position: absolute;
     left: 50%;
-    top: 62%;
+    top: 63%;
     transform: translateX(-50%);
     margin: 0;
     white-space: nowrap;
