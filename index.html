@@ -18,9 +18,10 @@
     <header>
         <div class="logo">ginger</div>
         <nav>
-            <!-- <a href="#me">about me</a>
+            <a href="#me">about me</a>
             <a href="#experience">experience</a> 
-             <a href="#connect">connect</a>  -->
+            <a href="#connect">connect</a>
+            <button id="clear-btn" title="Clear drawing">clear</button>
         </nav>
     </header>
 
@@ -28,13 +29,17 @@
     <main>
         <h1>praewpiraya wiwatphonthana<br>( ginger )</h1>
         <p class="subtitle">MSc in security and cloud computing</p>
-          <p class="subtitle">work in progress.</p>
-          <p></p>🫚</p>
+                <p class="subtitle">work in progress.</p>
+                <p class="ginger-icon" id="ginger-icon" aria-hidden="true">🫚</p>
+                <p id="click-me-text">* click me *</p>
         <!-- <div class="button-group">
             <button class="btn-primary">Call to action</button>
             <button class="btn-secondary">Secondary</button>
         </div> -->
     </main>
+
+    <!-- Canvas for drawing -->
+    <canvas id="draw-canvas" aria-hidden="true"></canvas>
 
     <!-- Footer -->
     <footer>
@@ -50,8 +55,7 @@
                             stroke-linejoin="round" />
                     </svg> -->
                     <span>ginger/น้ำขิง/姜/inkivääri</span>
-                    <p>&copy; 2026 by Praewpiraya Wiwatphonthana. 
-                    </p>
+                    <p class="footer-copyright">&copy; 2026 by Praewpiraya Wiwatphonthana.</p>
                 </div>
                
             </div>
@@ -75,6 +79,10 @@
             </div>
         </div>
     </footer>
+
+    <canvas id="draw-canvas" aria-hidden="true"></canvas>
+
+    <script src="script_canvas.js"></script>
 </body>
 
 </html>
