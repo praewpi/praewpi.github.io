@@ -87,6 +87,8 @@ main h1 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
 }
 
 .subtitle {
@@ -267,4 +269,11 @@ footer {
         align-items: flex-start;
         gap: 1.5rem;
     }
+}
+
+/* Float animation for h1 */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
 }
