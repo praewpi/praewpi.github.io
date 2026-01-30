@@ -53,6 +53,7 @@
         // load shared header behaviors (connect dropdown) and drawing script
         const h = document.createElement('script');
         h.src = 'js/header.js';
+        h.onload = function(){ if(window.attachConnect) window.attachConnect(); };
         document.body.appendChild(h);
 
         const s = document.createElement('script');
