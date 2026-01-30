@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --ginger-size: 2.8rem;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: #fbf1dc;
@@ -154,21 +158,30 @@ main h1 {
 
 /* Ginger emoji control */
 .ginger-icon {
-    display: inline-block;
-    font-size: 2.8rem; /* increased size */
-    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--ginger-size);
+    width: var(--ginger-size);
+    height: var(--ginger-size);
     line-height: 1;
     cursor: pointer;
-    position: absolute;
-    left: 50%;
-    top: 59%;
-    transform: translateX(-50%);
-    margin: 0;
+    background: none;
+    border: none;
+    padding: 0;
+    vertical-align: middle;
+    position: relative;
+    transform-origin: center;
+    transition: transform 120ms ease, filter 120ms ease;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 @media (max-width: 480px) {
     .ginger-icon {
         font-size: 2.4rem;
+        width: 2.4rem;
+        height: 2.4rem;
     }
 }
 
@@ -181,14 +194,23 @@ main h1 {
     font-family: 'Courier New', monospace;
     font-size: 0.85rem;
     color: #999;
-    margin-top: 1.5rem;
-    position: absolute;
-    left: 50%;
-    top: 63%;
-    transform: translateX(-50%);
     margin: 0;
+    position: relative;
     white-space: nowrap;
 }
+
+/* Row to center the icon and helper text below the subtitle */
+.icon-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+    /* reserve enough height so scaling the icon doesn't push content */
+    min-height: calc(var(--ginger-size) * 1.4);
+}
+
+.ginger-icon:focus { outline: none; }
 
 .button-group {
     display: flex;

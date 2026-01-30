@@ -20,9 +20,11 @@
     <main>
         <h1>praewpiraya wiwatphonthana<br>( ginger )</h1>
         <p class="subtitle">MSc in security and cloud computing</p>
-                <p class="subtitle">work in progress.</p>
-                <p class="ginger-icon" id="ginger-icon" aria-hidden="true">🫚</p>
-                <p id="click-me-text">* click me *</p>
+        <p class="subtitle">work in progress.</p>
+        <div class="icon-row">
+            <button type="button" class="ginger-icon" id="ginger-icon" aria-label="Ginger">🫚</button>
+            <p id="click-me-text">* click me *</p>
+        </div>
         <!-- <div class="button-group">
             <button class="btn-primary">Call to action</button>
             <button class="btn-secondary">Secondary</button>
@@ -48,12 +50,28 @@
     async function init(){
         await includeHTML('site-header','header.html');
         await includeHTML('site-footer','footer.html');
-        // load the drawing script only after header/footer are present
+        // load shared header behaviors (connect dropdown) and drawing script
+        const h = document.createElement('script');
+        h.src = 'js/header.js';
+        document.body.appendChild(h);
+
         const s = document.createElement('script');
-        s.src = 'script_canvas.js';
+        s.src = 'js/script_canvas.js';
         document.body.appendChild(s);
     }
     init();
+    </script>
+    <script>
+    // Toggle visual state without causing page reflow; blur to avoid focus scroll
+    document.addEventListener('DOMContentLoaded', function (){
+        const g = document.getElementById('ginger-icon');
+        if(!g) return;
+        g.addEventListener('click', function (e){
+            g.classList.toggle('active');
+            // remove focus so browser won't try to scroll element into view
+            setTimeout(()=>g.blur(), 50);
+        });
+    });
     </script>
 </body>
 

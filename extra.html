@@ -35,10 +35,14 @@
 
 
 
+
     async function init(){
         await includeHTML('site-header','header.html');
         await includeHTML('site-footer','footer.html');
-        attachConnect();
+        // load shared header behaviors so connect dropdown works
+        const h = document.createElement('script');
+        h.src = 'js/header.js';
+        document.body.appendChild(h);
     }
     init();
     </script>
