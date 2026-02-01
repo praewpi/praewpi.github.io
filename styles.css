@@ -6,6 +6,7 @@
 
 :root {
     --ginger-size: 2.8rem;
+    --site-bg: #fbf1dc;
 }
 
 body {
@@ -428,10 +429,15 @@ body.experience-page main {
 .list-block { margin: 1rem 0; }
 
 .exp-item {
+    display: block;
+    padding: 0.25rem 0; /* reduced vertical padding */
+    background: var(--site-bg); /* entry background matches site */
+}
+
+.exp-row {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.5rem 0; /* reduced vertical padding */
 }
 
 .exp-content { flex: 1; }
@@ -440,7 +446,16 @@ body.experience-page main {
 .exp-subtitle { font-style: italic; color: #666; margin-top: 0.125rem; margin-bottom: 0.25rem; }
 .exp-location { color: #777; margin-top: 0.125rem; font-size: 0.95rem; }
 .exp-year { color: #666; margin-left: 1rem; white-space: nowrap; font-weight: 600; }
-.exp-arrow { color: #bbb; margin-left: 1rem; font-size: 1.25rem; }
+.exp-meta { display: flex; flex-direction: row; align-items: center; gap: 0.5rem; }
+.exp-arrow { color: #bbb; font-size: 1.25rem; transition: transform 180ms ease, color 180ms ease, opacity 180ms ease; display: inline-flex; align-items: center; margin-left: 0.25rem; }
+.exp-arrow .exp-arrow-icon { transform-origin: center; transition: transform 180ms ease, opacity 180ms ease, stroke 180ms ease; stroke: currentColor; }
+.exp-arrow.open .exp-arrow-icon { transform: rotate(90deg); color: #000; }
+.exp-arrow.disabled { opacity: 0.35; cursor: default; }
+
+/* expanding detail area */
+.exp-detail { overflow: hidden; max-height: 0; transition: max-height 260ms ease, padding 180ms ease, background-color 220ms ease; background: var(--site-bg); }
+.exp-detail-inner { padding: 0.5rem 0.5rem 0.75rem 0.5rem; color: #333; }
+.exp-item.open .exp-detail { /* ensure visible spacing when open */ padding-top: 0.5rem; }
 
 @media (max-width: 768px) {
     .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }

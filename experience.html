@@ -31,16 +31,6 @@
 
         <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Extracurricular Activities</h2>
-            </div>
-
-            <hr class="divider">
-
-            <div class="experience-list list-block" id="extracurricular-list"></div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
                 <h2 class="section-title">Achievements & Awards</h2>
             </div>
 
@@ -49,18 +39,40 @@
             <div class="experience-list list-block" id="achievements-list"></div>
         </section>
 
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Extracurricular Activities</h2>
+            </div>
+
+            <hr class="divider">
+
+            <div class="experience-list list-block" id="extracurricular-list"></div>
+        </section>
+
     </main>
 
     <div id="site-footer"></div>
 
         <template id="exp-tpl">
             <article class="exp-item">
-                <div class="exp-content">
-                    <div class="exp-title"></div>
-                    <div class="exp-subtitle"></div>
-                    <div class="exp-location"></div>
+                <div class="exp-row">
+                    <div class="exp-content">
+                        <div class="exp-title"></div>
+                        <div class="exp-subtitle"></div>
+                        <div class="exp-location"></div>
+                    </div>
+                    <div class="exp-meta">
+                        <div class="exp-year"></div>
+                        <div class="exp-arrow" aria-hidden="true">
+                            <svg class="exp-arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="exp-year"></div>
+                <div class="exp-detail" aria-hidden="true">
+                    <div class="exp-detail-inner"></div>
+                </div>
             </article>
         </template>
 
