@@ -14,9 +14,18 @@
         const node = tpl.content.cloneNode(true);
         const title = node.querySelector('.exp-title');
         const subtitle = node.querySelector('.exp-subtitle');
+        const location = node.querySelector('.exp-location');
         const year = node.querySelector('.exp-year');
         if(title) title.textContent = e.title || '';
         if(subtitle) subtitle.textContent = e.subtitle || '';
+        if(location) {
+          if (e.location) {
+            location.textContent = e.location;
+            location.style.display = '';
+          } else {
+            location.style.display = 'none';
+          }
+        }
         if(year) year.textContent = e.year || '';
         container.appendChild(node);
         if(i !== items.length - 1){

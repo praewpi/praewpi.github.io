@@ -438,6 +438,7 @@ body.experience-page main {
 
 .exp-title { font-weight: 700; font-size: 1.125rem; }
 .exp-subtitle { font-style: italic; color: #666; margin-top: 0.125rem; margin-bottom: 0.25rem; }
+.exp-location { color: #777; margin-top: 0.125rem; font-size: 0.95rem; }
 .exp-year { color: #666; margin-left: 1rem; white-space: nowrap; font-weight: 600; }
 .exp-arrow { color: #bbb; margin-left: 1rem; font-size: 1.25rem; }
 
