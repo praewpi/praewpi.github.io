@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ginger - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <h1>praewpiraya wiwatphonthana<br>( ginger )</h1>
+        <p class="subtitle">MSc in security and cloud computing</p>
+        <p class="subtitle">work in progress.</p>
+        <div class="icon-row">
+            <button type="button" class="ginger-icon" id="ginger-icon" aria-label="Ginger">🫚</button>
+            <p id="click-me-text">* click me *</p>
+        </div>
+        <!-- <div class="button-group">
+            <button class="btn-primary">Call to action</button>
+            <button class="btn-secondary">Secondary</button>
+        </div> -->
+    </main>
+
+    <!-- Canvas for drawing -->
+    <canvas id="draw-canvas" aria-hidden="true"></canvas>
+
+    <div id="site-footer"></div>
+
+    <canvas id="draw-canvas" aria-hidden="true"></canvas>
+
+    <script>
+    async function includeHTML(id, url){
+        try{
+            const res = await fetch(url);
+            if(!res.ok) return;
+            document.getElementById(id).innerHTML = await res.text();
+        }catch(e){/* fail silently */}
+    }
+
+    async function init(){
+        await includeHTML('site-header','header.html');
+        await includeHTML('site-footer','footer.html');
+        // load shared header behaviors (connect dropdown) and drawing script
+        const h = document.createElement('script');
+        h.src = 'js/header.js';
+        h.onload = function(){ if(window.attachConnect) window.attachConnect(); };
+        document.body.appendChild(h);
+
+        const s = document.createElement('script');
+        s.src = 'js/script_canvas.js';
+        document.body.appendChild(s);
+    }
+    init();
+    </script>
+    <script>
+    // Toggle visual state without causing page reflow; blur to avoid focus scroll
+    document.addEventListener('DOMContentLoaded', function (){
+        const g = document.getElementById('ginger-icon');
+        if(!g) return;
+        g.addEventListener('click', function (e){
+            g.classList.toggle('active');
+            // remove focus so browser won't try to scroll element into view
+            setTimeout(()=>g.blur(), 50);
+        });
+    });
+    </script>
+</body>
+
+</html>

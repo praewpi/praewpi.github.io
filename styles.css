@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --ginger-size: 2.8rem;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fbf1dc;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 2px solid #000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.connect-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#connect-btn {
+    background: none;
+    border: none;
+    color: #756f6f;
+    font-size: 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
+    padding: 0;
+}
+
+#connect-btn:hover {
+    opacity: 0.7;
+}
+
+.connect-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fbf1dc;
+    /* border: 2px solid #000; */ */
+    /* background-color: transparent; */
+    border: none;
+    padding: 1rem;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.connect-menu.active {
+    display: flex;
+}
+
+.connect-menu a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    padding: 0.5rem;
+}
+
+.connect-menu a:hover {
+    opacity: 0.7;
+}
+
+#clear-btn {
+    background: none;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    text-decoration: underline;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    padding: 0;
+}
+
+#clear-btn:hover {
+    opacity: 1 !important;
+}
+
+/* Canvas for drawing */
+#draw-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    pointer-events: none; /* don't block interactions */
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Ginger emoji control */
+.ginger-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--ginger-size);
+    width: var(--ginger-size);
+    height: var(--ginger-size);
+    line-height: 1;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    vertical-align: middle;
+    position: relative;
+    transform-origin: center;
+    transition: transform 120ms ease, filter 120ms ease;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+@media (max-width: 480px) {
+    .ginger-icon {
+        font-size: 2.4rem;
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+.ginger-icon.active {
+    transform: scale(1.12);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
+
+#click-me-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #999;
+    margin: 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* Row to center the icon and helper text below the subtitle */
+.icon-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+    /* reserve enough height so scaling the icon doesn't push content */
+    min-height: calc(var(--ginger-size) * 1.4);
+}
+
+.ginger-icon:focus { outline: none; }
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 0.5rem;
+}
+
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Footer */
+footer {
+    padding: 2rem 3rem;
+    border-top: 2px solid #000;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.footer-logo p {
+    color: #999;
+    font-weight: 400;
+}
+
+.footer-copyright {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #666;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+    color: #000;
+}
+
+.footer-right {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-right a {
+    color: #666;
+    transition: color 0.2s;
+}
+
+.footer-right a:hover {
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 1rem;
+    }
+
+    main h1 {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    footer {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
+
+/* Float animation for h1 */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+/* Experience / Extracurricular sections (scoped to experience page) */
+body.experience-page main {
+    align-items: stretch;
+    /* allow full width so header/title/meta can sit far left/right */
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 4rem 12rem;
+    text-align: left;
+}
+
+@media (max-width: 1200px) {
+    body.experience-page main {
+        padding: 3rem 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body.experience-page main {
+        padding: 2rem 1.25rem;
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.section-meta {
+    font-size: 1rem;
+    color: #222;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.8);
+    margin: 1rem 0 1.2rem;
+}
+
+.divider.short {
+    width: 100%;
+    opacity: 0.15;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem; /* tightened between items */
+}
+
+/* Reusable spacing for list sections (top + bottom) */
+.list-block { margin: 1rem 0; }
+
+.exp-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0; /* reduced vertical padding */
+}
+
+.exp-content { flex: 1; }
+
+.exp-title { font-weight: 700; font-size: 1.125rem; }
+.exp-subtitle { font-style: italic; color: #666; margin-top: 0.125rem; margin-bottom: 0.25rem; }
+.exp-year { color: #666; margin-left: 1rem; white-space: nowrap; font-weight: 600; }
+.exp-arrow { color: #bbb; margin-left: 1rem; font-size: 1.25rem; }
+
+@media (max-width: 768px) {
+    .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .exp-item { gap: 0.75rem; }
+    .exp-year { display: none; }
+    .list-block { margin: 2rem 0; }
+}

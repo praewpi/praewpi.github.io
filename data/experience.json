@@ -1,0 +1,40 @@
+{
+  "experience": [
+    {
+      "title": "Ericsson",
+      "subtitle": "Master Thesis Research Intern",
+      "year": "Mar 2024 - Dec 2024",
+      "location": "Finland",
+      "tags": ["Internship", "Research"],
+      "description": "Conducting research on user experience and interface design for telecom applications, focusing on enhancing usability and accessibility."
+    },
+    {
+      "title": "Ericsson",
+      "subtitle": "Research Intern",
+      "year": "May 2023 - Aug 2023",
+      "location": "Finland",
+      "tags": ["Internship", "Research"]
+    },
+    {
+      "title": "Neuroscience Center for Research and Innovation, Learning Institute",
+      "subtitle": "Research Assistant",
+      "year": "2016 — 2017",
+      "location": "King Mongkut's University of Technology Thonburi, Thailand ",
+      "tags": ["Internship", "Research"]
+    },
+    {
+      "title": "Institute of High-Performance Computing (IHPC), A*STAR",
+      "subtitle": "Research Assistant",
+      "year": "2015 — 2016",
+      "location": "Singapore",
+      "tags": ["Internship", "Research"]
+    }
+  ],
+  "extracurricular": [
+    {
+      "title": "Neuromatch Summer School - Deep Learning Track",
+      "subtitle": "",
+      "year": "2022"
+    }
+  ]
+}
