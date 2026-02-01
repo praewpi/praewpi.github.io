@@ -6,56 +6,107 @@
       "year": "Mar 2024 - Dec 2024",
       "location": "Finland",
       "tags": ["Internship", "Research"],
-      "description": "Conducting research on user experience and interface design for telecom applications, focusing on enhancing usability and accessibility."
+      "description": ""
     },
     {
       "title": "Ericsson",
       "position": "Research Intern",
       "year": "May 2023 - Aug 2023",
       "location": "Finland",
-      "tags": ["Internship", "Research"]
+      "tags": ["Internship", "Research"],
+      "description": ""
     },
     {
       "title": "Neuroscience Center for Research and Innovation, Learning Institute",
       "position": "Research Assistant",
       "year": "Aug 2020 – Aug 2022",
       "location": "King Mongkut's University of Technology Thonburi, Thailand",
-      "tags": ["Internship", "Research"]
+      "tags": ["Internship", "Research"],
+      "description": ""
     },
     {
       "title": "Institute of High-Performance Computing (IHPC), A*STAR",
       "position": "Research Assistant",
       "year": "Jun 2019 - Dec 2019",
       "location": "Singapore",
-      "tags": ["Internship", "Research"]
+      "tags": ["Internship", "Research"],
+      "description": ""
     }
   ],
   "extracurricularActivities": [
     {
-      "title": "Neuromatch Summer School - Deep Learning Track",
-      "subtitle": "",
+      "title": "IQM Quantum School",
       "location": "Online",
-      "year": "2022"
+      "year": "2025",
+      "description": ""
     },
     {
-      "title": "Lunghwa University Holiday School (Language and Culture camp)",
-      "subtitle": "",
+      "title": "Slush 2025 Volunteer",
+      "location": "Finland",
+      "year": "2025",
+      "description": "Speaker Buddy - Assisted and guided speakers throughout the event to ensure smooth transitions and adherence to schedules."
+    },
+    {
+      "title": "Neuromatch Summer School - Deep Learning Track",
+      "location": "Online",
+      "year": "2022",
+      "description": ""
+    },
+    {
+      "title": "Lunghwa University Holiday School (Language and Culture Camp)",
       "location": "Taiwan",
-      "year": "2019"
+      "year": "2019",
+     "description": ""
     },
     {
-      "title": "Comcamp29 (KMUTT CPE Academic camp)",
-      "subtitle": "",
+      "title": "UMAP Discovery Camp",
       "location": "Thailand",
-      "year": "2019"
+      "year": "2018",
+      "description": "Received UMP101 Global Citizenship credit with a grade of A from participating in a 2-week special summer program to promote Asian language, culture, arts, cuisine, and critical issues in the region under the theme \"Global Citizenship\" as a representative of King Mongkut's University of Technology Thonburi"
+    },
+    {
+      "title": "ComCamp29 (KMUTT CPE Academic Camp)",
+      "location": "Thailand",
+      "year": "2017",
+      "description": ""
     }
   ],
   "achievementsAwards": [
     {
-      "title": "Best Poster Award",
-      "subtitle": "Undergraduate Research Symposium",
+      "title": "JUNCTION Hackathon",
+      "location": "Finland",
+      "year": "2025",
+      "description": "Won 2nd Place in the Tech Challenge by n8n by developing an AI-assisted security assessor that converts product data (name, URL, vendor, hash) into a CISO-ready brief using agentic AI with n8n and Gemini."
+    },
+    {
+      "title": "F10: Fintech Hackathon",
+      "location": "Singapore",
       "year": "2019",
-      "description": "Awarded for outstanding poster presentation on neuroscience project."
+      "description": "Got to the top 15 finalists out of 40 teams as \"What the Hack\" team to solve the problem statements given by Julius Bar (private banking): find the way to create a touchpoint for the next generation."
+    },
+        {
+      "title": "We Power Road Safety Digital Creator by Shell",
+      "location": "Thailand",
+      "year": "2019",
+      "description": "Won a recognition award as \"Team V Power\" in gamification categories by developing digital learning materials for schoolchildren to reinforce a safety mindset."
+    },
+    {
+      "title": "Data Science Hackathon by RISE Accelerator",
+      "location": "Thailand",
+      "year": "2018",
+      "description": "Got to the last 8 finalists out of 32 teams that participated as a team to find ideas and solutions to solve problem statements given by the leading companies in Thailand."
+    },
+    {
+      "title": "KMUTT Qualified Hands-on Engineer (Monotsukuri Engineer)",
+      "location": "Thailand",
+      "year": "2018",
+      "description": "Awarded a full scholarship to visit 5 top universities and 11 factories in  Japan (only 18 students in the faculty of engineering are selected) to learn more about Japanese work ethic and culture."
+    },
+    {
+      "title": "Workshop Better UX, Better KMUTT",
+      "location": "Thailand",
+      "year": "2018",
+      "description": "Won best project prize by designing and prototyping University's shuttle bus stop sign with improved UX design from identified user pain points."
     }
   ]
 }
