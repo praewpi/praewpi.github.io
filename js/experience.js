@@ -17,7 +17,9 @@
         const location = node.querySelector('.exp-location');
         const year = node.querySelector('.exp-year');
         if(title) title.textContent = e.title || '';
-        if(subtitle) subtitle.textContent = e.subtitle || '';
+        //`position` for work items, `subtitle` for other sections
+        const subtitleText = e.position ?? e.subtitle ?? '';
+        if(subtitle) subtitle.textContent = subtitleText;
         if(location) {
           if (e.location) {
             location.textContent = e.location;
@@ -36,8 +38,9 @@
       });
     };
 
-    if(Array.isArray(data.experience)) renderList(data.experience, 'experience-list');
-    if(Array.isArray(data.extracurricular)) renderList(data.extracurricular, 'extracurricular-list');
+    if(Array.isArray(data.workExperience)) renderList(data.workExperience, 'experience-list');
+    if(Array.isArray(data.extracurricularActivities)) renderList(data.extracurricularActivities, 'extracurricular-list');
+    if(Array.isArray(data.achievementsAwards)) renderList(data.achievementsAwards, 'achievements-list');
   }catch(err){
     // don't break page rendering for users; log for dev
     console.error('loadExperience error:', err);
