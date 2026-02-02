@@ -466,7 +466,7 @@ body.experience-page main {
 
 .exp-item {
     display: block;
-    padding: 0.25rem 0; /* reduced vertical padding */
+    padding: 0.2rem 0.5rem; /* reduced vertical and horizontal padding */
     background: var(--site-bg); /* entry background matches site */
 }
 
@@ -490,7 +490,7 @@ body.experience-page main {
 
 /* expanding detail area */
 .exp-detail { overflow: hidden; max-height: 0; transition: max-height 260ms ease, padding 180ms ease, background-color 220ms ease; background: var(--site-bg); }
-.exp-detail-inner { padding: 0.5rem 0.5rem 0.75rem 0.5rem; color: #333; }
+.exp-detail-inner { padding: 0.5rem 1.2rem 0.75rem 0rem; color: #333; }
 .exp-item.open .exp-detail { /* ensure visible spacing when open */ padding-top: 0.5rem; }
 
 @media (max-width: 768px) {

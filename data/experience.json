@@ -37,38 +37,42 @@
     {
       "title": "IQM Quantum School",
       "location": "Online",
+      "position": "Participant",
       "year": "2025",
-      "description": ""
+      "description": "Intensive 3-day program in quantum computing, including hands-on implementation of core quantum algorithms (Bernstein–Vazirani, Grover’s Search, and QAOA) on real quantum hardware, alongside learning about hardware architecture and pulse-level quantum control."
     },
     {
       "title": "Slush 2025 Volunteer",
       "location": "Finland",
-      "year": "2025",
-      "description": "Speaker Buddy - Assisted and guided speakers throughout the event to ensure smooth transitions and adherence to schedules."
+      "position": "Speaker Buddy",
+      "year": "2025"
     },
     {
       "title": "Neuromatch Summer School - Deep Learning Track",
       "location": "Online",
+      "position": "Participant",
       "year": "2022",
-      "description": ""
+      "description": "Three-week intensive summer school featuring hands-on tutorials and collaborative group projects focused on deep learning methods applied to neuroscience."
     },
     {
       "title": "Lunghwa University Holiday School (Language and Culture Camp)",
       "location": "Taiwan",
+      "position": "Participant",
       "year": "2019",
-     "description": ""
+     "description": "Selected as one of 25 participants for a language and culture camp focused on learning basic Chinese and exploring Taiwanese culture through lectures and immersive cultural trips."
     },
     {
       "title": "UMAP Discovery Camp",
       "location": "Thailand",
+      "position": "Representative of King Mongkut's University of Technology Thonburi",
       "year": "2018",
-      "description": "Received UMP101 Global Citizenship credit with a grade of A from participating in a 2-week special summer program to promote Asian language, culture, arts, cuisine, and critical issues in the region under the theme \"Global Citizenship\" as a representative of King Mongkut's University of Technology Thonburi"
+      "description": "Represented King Mongkut’s University of Technology Thonburi in a two-week international summer program promoting Thai language, culture, arts, and cuisine across regions under the theme \"Global Citizenship.\""
     },
     {
       "title": "ComCamp29 (KMUTT CPE Academic Camp)",
       "location": "Thailand",
-      "year": "2017",
-      "description": ""
+      "position": "Teacher Assistant of Linux Workshop",
+      "year": "2017"
     }
   ],
   "achievementsAwards": [
@@ -76,7 +80,7 @@
       "title": "JUNCTION Hackathon",
       "location": "Finland",
       "year": "2025",
-      "description": "Won 2nd Place in the Tech Challenge by n8n by developing an AI-assisted security assessor that converts product data (name, URL, vendor, hash) into a CISO-ready brief using agentic AI with n8n and Gemini."
+      "description": "Won 2nd Place in the n8n Tech Challenge by developing an AI-assisted security assessor that transforms product data (name, URL, vendor, hash) into a CISO-ready brief using agentic AI with n8n and Gemini."
     },
     {
       "title": "F10: Fintech Hackathon",
@@ -88,25 +92,25 @@
       "title": "We Power Road Safety Digital Creator by Shell",
       "location": "Thailand",
       "year": "2019",
-      "description": "Won a recognition award as \"Team V Power\" in gamification categories by developing game as a digital learning materials for schoolchildren to reinforce a safety mindset."
+      "description": "Won a recognition award in the Gamification category as \"Team V Power\" by developing an educational game designed to promote road safety awareness and a safety mindset among schoolchildren."
     },
     {
       "title": "Data Science Hackathon by RISE Accelerator",
       "location": "Thailand",
       "year": "2018",
-      "description": "Got to the last 8 finalists out of 32 teams that participated as a team to find ideas and solutions to solve problem statements given by the leading companies in Thailand."
+      "description": "Top 8 finalist (out of 32 teams) in a data science hackathon, addressing a PTTEP challenge on smarter energy consumption. Proposed a Green Delivery solution using a design thinking approach, including real user research, UI prototyping, and data analysis, with K-means clustering applied to segment customer purchase behavior by geographic region."
     },
     {
       "title": "KMUTT Qualified Hands-on Engineer (Monotsukuri Engineer)",
       "location": "Thailand",
       "year": "2018",
-      "description": "Awarded a full scholarship to visit 5 top universities and 11 factories in  Japan (only 18 students in the faculty of engineering are selected) to learn more about Japanese work ethic and culture."
+      "description": "Awarded a full scholarship as one of 18 selected engineering students to visit 5 leading universities and 11 factories in Japan, gaining hands-on exposure to Japanese engineering practices, work ethic, and industrial culture."
     },
     {
       "title": "Workshop Better UX, Better KMUTT",
       "location": "Thailand",
       "year": "2018",
-      "description": "Won best project prize by designing and prototyping University's shuttle bus stop sign with improved UX design from identified user pain points."
+      "description": "Won Best Project award for designing and prototyping a digital university shuttle bus stop sign, improving user experience by addressing key user pain points identified through UX research."
     }
   ]
 }
