@@ -7,6 +7,8 @@
 :root {
     --ginger-size: 2.8rem;
     --site-bg: #fbf1dc;
+    --link-underline: #0a0600;
+    --link-color: #000;
 }
 
 body {
@@ -37,17 +39,35 @@ nav {
     gap: 2rem;
 }
 
-nav a {
+nav a,
+.connect-menu a,
+.footer-nav a {
     text-decoration: none;
-    color: #000;
+    color: var(--link-color);
     font-size: 1rem;
     font-weight: 400;
-    transition: opacity 0.2s;
+    position: relative;
+    transition: color 0.4s;
 }
 
-nav a:hover {
-    opacity: 0.7;
+nav a::before,
+.connect-menu a::before,
+.footer-nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: var(--link-underline);
+    bottom: -6px;
+    left: 0;
+    transition: width 0.4s;
+    border-radius: 2px;
 }
+
+nav a:hover::before,
+.connect-menu a:hover::before,
+.footer-nav a:hover::before { width: 100%; }
+nav a:hover, .connect-menu a:hover, .footer-nav a:hover { color: var(--link-color); }
 
 .connect-dropdown {
     position: relative;
@@ -64,7 +84,22 @@ nav a:hover {
     font-family: 'Inter', sans-serif;
     transition: opacity 0.2s;
     padding: 0;
+    position: relative; /* enable pseudo underline */
 }
+
+#connect-btn::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: var(--link-underline);
+    bottom: -6px;
+    left: 0;
+    transition: width 0.4s;
+    border-radius: 2px;
+}
+
+#connect-btn:hover::before { width: 100%; }
 
 #connect-btn:hover {
     opacity: 0.7;
@@ -91,13 +126,14 @@ nav a:hover {
 }
 
 .connect-menu a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #000;
+    color: var(--link-color);
     text-decoration: none;
     transition: opacity 0.2s;
     padding: 0.5rem;
+    position: relative; /* allow ::before underline */
 }
 
 .connect-menu a:hover {
