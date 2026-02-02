@@ -158,7 +158,8 @@ nav a:hover, .connect-menu a:hover, .footer-nav a:hover { color: var(--link-colo
 }
 
 /* Canvas for drawing */
-#draw-canvas {
+#draw-canvas,
+#mouse-spot-canvas {
     position: fixed;
     left: 0;
     top: 0;
