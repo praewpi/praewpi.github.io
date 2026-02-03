@@ -1,11 +1,10 @@
 (function(){
-  // Pure JS SmoothFollower replicating the React example behavior
+  // Smooth Follower 
   const DOT_SMOOTHNESS = 0.18; // how fast the inner dot follows
   const BORDER_DOT_SMOOTHNESS = 0.09; // how fast the border follows
   const HOVER_SIZE = 64; // increased hover size
   const NORMAL_SIZE = 28;
 
-  // create container + elements dynamically to avoid editing HTML
   const container = document.createElement('div');
   container.className = 'sf-container';
   const dot = document.createElement('div');
@@ -15,6 +14,7 @@
   container.appendChild(border);
   container.appendChild(dot);
   document.body.appendChild(container);
+  
   // hide initially to avoid centered flash before first mousemove
   container.style.opacity = '0';
   container.style.transition = 'opacity 160ms ease';
@@ -46,7 +46,7 @@
   const hoverSelectors = [
     '#connect-btn',
     '#clear-btn',
-    '.section-title',
+    // removed '.section-title' so plain section headers won't trigger hover
     'a[href*="index.html"]',
     'a[href*="about"]',
     'a[href*="About"]',
