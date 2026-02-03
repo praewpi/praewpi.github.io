@@ -39,6 +39,21 @@ nav {
     gap: 2rem;
 }
 
+/* caret above-left of 'about me' link on hover */
+nav a.about-link { position: relative; display: inline-block; }
+nav a.about-link .about-caret {
+    position: absolute;
+    left: 0; /* align to link left edge */
+    top: 0;
+    transform: translate(-16px, -90%) rotate(-20deg);
+    width: 28px;
+    height: 28px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 180ms cubic-bezier(.2,.9,.2,1);
+}
+nav a.about-link:hover .about-caret { opacity: 1; transform: translate(-20px, -75%) rotate(-25deg); }
+
 nav a,
 .connect-menu a,
 .footer-nav a {
