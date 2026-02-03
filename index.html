@@ -18,12 +18,32 @@
 
     <!-- Main Content -->
     <main>
-        <h1>praewpiraya wiwatphonthana<br>( ginger )</h1>
-        <p class="subtitle">MSc in security and cloud computing</p>
-        <p class="subtitle">work in progress.</p>
-        <div class="icon-row">
-            <button type="button" class="ginger-icon" id="ginger-icon" aria-label="Ginger">🫚</button>
-            <p id="click-me-text">* click me *</p>
+        <div class="aboutme-wrapper">
+            <section class="aboutme-content">
+                <h1>praewpiraya wiwatphonthana</h1>
+            <p class="subtitle">MSc in security and cloud computing</p>
+            <p class="subtitle">Hi, I’m Ginger! </p>
+            <p class="subtitle">I love learning new things and I’m curious about all things tech. <br> I’m always
+                enthusiastic and enjoy solving challenging problems in a collaborative team environment.</p>
+
+            <p class="subtitle">My background is in cloud computing and security with hands-on experience with cloud
+                platforms, Kubernetes, MLOps and automation. <br>I’m actively pursuing roles in Site Reliability
+                Engineer, Platform Engineer and DevOps, and MLOps. </p>
+            <p class="subtitle">When I’m not working with tech, you’ll usually find me behind a camera, painting with
+                watercolors, or baking something sweet.<br> Whether it’s experimenting with a new recipe or capturing a
+                moment through a lens,<br> I love creating things—both on and off the screen.</p>
+
+            <p class="subtitle">I hope this website helps you learn a little bit more about me :)</p>
+            <p class="subtitle">work in progress.</p>
+            <div class="icon-row">
+                <button type="button" class="ginger-icon" id="ginger-icon" aria-label="Ginger">🫚</button>
+                <p id="click-me-text">* click me *</p>
+            </div>
+        </section>
+            <div class="profile-container">
+                <img src="images/my-face-portrait.png" alt="Temp profile" class="profile-img">
+                <p class="profile-caption">*temp profile*</p>
+            </div>
         </div>
         <!-- <div class="button-group">
             <button class="btn-primary">Call to action</button>
@@ -39,49 +59,49 @@
     <!-- <canvas id="mouse-spot-canvas" aria-hidden="true"></canvas> -->
 
     <script>
-    async function includeHTML(id, url){
-        try{
-            const res = await fetch(url);
-            if(!res.ok) return;
-            document.getElementById(id).innerHTML = await res.text();
-        }catch(e){/* fail silently */}
-    }
+        async function includeHTML(id, url) {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) return;
+                document.getElementById(id).innerHTML = await res.text();
+            } catch (e) {/* fail silently */ }
+        }
 
-    async function init(){
-        await includeHTML('site-header','header.html');
-        await includeHTML('site-footer','footer.html');
-        // load shared header behaviors (connect dropdown) and drawing script
-        const h = document.createElement('script');
-        h.src = 'js/header.js';
-        h.onload = function(){ if(window.attachConnect) window.attachConnect(); };
-        document.body.appendChild(h);
+        async function init() {
+            await includeHTML('site-header', 'header.html');
+            await includeHTML('site-footer', 'footer.html');
+            // load shared header behaviors (connect dropdown) and drawing script
+            const h = document.createElement('script');
+            h.src = 'js/header.js';
+            h.onload = function () { if (window.attachConnect) window.attachConnect(); };
+            document.body.appendChild(h);
 
-        const s = document.createElement('script');
-        s.src = 'js/script_canvas.js';
-        document.body.appendChild(s);
+            const s = document.createElement('script');
+            s.src = 'js/script_canvas.js';
+            document.body.appendChild(s);
 
-        // mouse spot (radial canvas) and smooth follower (dot + border)
-        // const ms = document.createElement('script');
-        // ms.src = 'js/mouse_spot.js';
-        // document.body.appendChild(ms);
+            // mouse spot (radial canvas) and smooth follower (dot + border)
+            // const ms = document.createElement('script');
+            // ms.src = 'js/mouse_spot.js';
+            // document.body.appendChild(ms);
 
-        const sf = document.createElement('script');
-        sf.src = 'js/smooth_follower.js';
-        document.body.appendChild(sf);
-    }
-    init();
+            const sf = document.createElement('script');
+            sf.src = 'js/smooth_follower.js';
+            document.body.appendChild(sf);
+        }
+        init();
     </script>
     <script>
-    // Toggle visual state without causing page reflow; blur to avoid focus scroll
-    document.addEventListener('DOMContentLoaded', function (){
-        const g = document.getElementById('ginger-icon');
-        if(!g) return;
-        g.addEventListener('click', function (e){
-            g.classList.toggle('active');
-            // remove focus so browser won't try to scroll element into view
-            setTimeout(()=>g.blur(), 50);
+        // Toggle visual state without causing page reflow; blur to avoid focus scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const g = document.getElementById('ginger-icon');
+            if (!g) return;
+            g.addEventListener('click', function (e) {
+                g.classList.toggle('active');
+                // remove focus so browser won't try to scroll element into view
+                setTimeout(() => g.blur(), 50);
+            });
         });
-    });
     </script>
 </body>
 
