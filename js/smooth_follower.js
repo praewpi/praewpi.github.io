@@ -1,9 +1,10 @@
 (function(){
   // Smooth Follower 
-  const DOT_SMOOTHNESS = 0.18; // how fast the inner dot follows
+  const DOT_SMOOTHNESS = 0.5; // how fast the inner dot follows (increased for snappier response)
   const BORDER_DOT_SMOOTHNESS = 0.09; // how fast the border follows
-  const HOVER_SIZE = 64; // increased hover size
-  const NORMAL_SIZE = 28;
+  // increased sizes for clearer visibility
+  const HOVER_SIZE = 75; // increased hover size
+  const NORMAL_SIZE = 40;
 
   const container = document.createElement('div');
   container.className = 'sf-container';
@@ -93,6 +94,51 @@
   // hide on first touch
   function onFirstTouch(){ container.style.display = 'none'; window.removeEventListener('touchstart', onFirstTouch); }
   window.addEventListener('touchstart', onFirstTouch, {passive:true});
+
+  // Public hide/show helpers for the follower
+  function hideFollower(){ container.style.display = 'none'; }
+  function showFollower(){
+    container.style.display = '';
+    if(_initialized) container.style.opacity = '1';
+  }
+
+  // Listen for clicks on `#ginger-icon` and `#clear-btn` to toggle visibility.
+  // If `#ginger-icon` is active (placed), hide the follower; otherwise show it.
+  document.addEventListener('click', function(e){
+    const ginger = e.target && e.target.closest ? e.target.closest('#ginger-icon') : null;
+    const clearBtn = e.target && e.target.closest ? e.target.closest('#clear-btn') : null;
+
+    if(ginger){
+      // allow other click handlers to toggle classes first
+      setTimeout(function(){
+        const g = document.getElementById('ginger-icon');
+        if(g && g.classList.contains('active')) hideFollower(); else showFollower();
+      }, 0);
+      return;
+    }
+
+    if(clearBtn){
+      // clear should bring the follower back
+      showFollower();
+    }
+  }, { passive: true });
+
+  // Also observe `#ginger-icon`'s `class` attribute changes to reliably hide/show follower.
+  function attachGingerObserver(){
+    const g = document.getElementById('ginger-icon');
+    if(!g) return setTimeout(attachGingerObserver, 250);
+    const mo = new MutationObserver((mutations)=>{
+      for(const m of mutations){
+        if(m.type === 'attributes' && m.attributeName === 'class'){
+          if(g.classList.contains('active')) hideFollower(); else showFollower();
+        }
+      }
+    });
+    mo.observe(g, { attributes: true, attributeFilter: ['class'] });
+    // set initial state based on current class
+    if(g.classList.contains('active')) hideFollower();
+  }
+  attachGingerObserver();
 
   // animation loop
   function animate(){

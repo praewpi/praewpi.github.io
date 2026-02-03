@@ -56,9 +56,10 @@
         if(pos.a > 0.005){
             const outerR = pos.r * 1.25;
             const g = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, outerR);
-            g.addColorStop(0, `rgba(${color.r},${color.g},${color.b},${0.9 * pos.a})`);
-            g.addColorStop(0.45, `rgba(${color.r},${color.g},${color.b},${0.42 * pos.a})`);
-            g.addColorStop(0.75, `rgba(${color.r},${color.g},${color.b},${0.18 * pos.a})`);
+            // lower the radial opacity so the glow is subtler
+            g.addColorStop(0, `rgba(${color.r},${color.g},${color.b},${0.5 * pos.a})`);
+            g.addColorStop(0.45, `rgba(${color.r},${color.g},${color.b},${0.22 * pos.a})`);
+            g.addColorStop(0.75, `rgba(${color.r},${color.g},${color.b},${0.08 * pos.a})`);
             g.addColorStop(1, `rgba(${color.r},${color.g},${color.b},0)`);
 
             ctx.fillStyle = g;

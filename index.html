@@ -36,7 +36,7 @@
 
     <div id="site-footer"></div>
 
-    <canvas id="draw-canvas" aria-hidden="true"></canvas>
+    <!-- <canvas id="mouse-spot-canvas" aria-hidden="true"></canvas> -->
 
     <script>
     async function includeHTML(id, url){
@@ -59,6 +59,15 @@
         const s = document.createElement('script');
         s.src = 'js/script_canvas.js';
         document.body.appendChild(s);
+
+        // mouse spot (radial canvas) and smooth follower (dot + border)
+        // const ms = document.createElement('script');
+        // ms.src = 'js/mouse_spot.js';
+        // document.body.appendChild(ms);
+
+        const sf = document.createElement('script');
+        sf.src = 'js/smooth_follower.js';
+        document.body.appendChild(sf);
     }
     init();
     </script>

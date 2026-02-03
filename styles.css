@@ -173,14 +173,24 @@ nav a:hover, .connect-menu a:hover, .footer-nav a:hover { color: var(--link-colo
 }
 
 /* Canvas for drawing */
-#draw-canvas,
-#mouse-spot-canvas {
+#draw-canvas {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 9998;
+    pointer-events: none; /* don't block interactions */
+}
+
+#mouse-spot-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* keep the radial glow behind text/content */
+    z-index: 0;
     pointer-events: none; /* don't block interactions */
 }
 
@@ -193,6 +203,9 @@ main {
     justify-content: center;
     padding: 2rem;
     text-align: center;
+    /* ensure main content is above the mouse spot canvas */
+    position: relative;
+    z-index: 2;
 }
 
 main h1 {
@@ -528,8 +541,8 @@ body.experience-page main {
     position: absolute;
     left: 0;
     top: 0;
-    width: 8px;
-    height: 8px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background: #000;
     transform: translate3d(0,0,0) translate(-50%, -50%);
@@ -541,8 +554,8 @@ body.experience-page main {
     position: absolute;
     left: 0;
     top: 0;
-    width: 28px;
-    height: 28px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     border: 2px solid #000;
     transform: translate3d(0,0,0) translate(-50%, -50%);
@@ -560,5 +573,9 @@ body.experience-page main {
     .sf-container { display: none !important; }
 }
 
-/* when hovering clickable targets, show pointer */
-body.sf-hover { cursor: pointer; }
+/* Hide native cursor on fine-pointer devices everywhere; the custom follower indicates hover state */
+@media (pointer: fine) {
+    html, body { cursor: none; }
+    /* do not set `cursor: pointer` on interactive elements so the native cursor stays hidden
+       the `.sf-border` and `.sf-dot` visuals will provide hover affordance instead */
+}
