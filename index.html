@@ -23,15 +23,14 @@
                 <h1>praewpiraya wiwatphonthana</h1>
             <p class="subtitle">MSc in security and cloud computing</p>
             <p class="subtitle">Hi, I’m Ginger! </p>
-            <p class="subtitle">I love learning new things and I’m curious about all things tech. <br> I’m always
-                enthusiastic and enjoy solving challenging problems in a collaborative team environment.</p>
+            <p class="subtitle">I love learning new things and I’m curious about all things tech. <br> I’m happiest when I solved challenging problems and picked up new skill.</p>
 
-            <p class="subtitle">My background is in cloud computing and security with hands-on experience with cloud
+            <!-- <p class="subtitle">My background is in cloud computing and security with hands-on experience with cloud
                 platforms, Kubernetes, MLOps and automation. <br>I’m actively pursuing roles in Site Reliability
                 Engineer, Platform Engineer and DevOps, and MLOps. </p>
             <p class="subtitle">When I’m not working with tech, you’ll usually find me behind a camera, painting with
                 watercolors, or baking something sweet.<br> Whether it’s experimenting with a new recipe or capturing a
-                moment through a lens,<br> I love creating things—both on and off the screen.</p>
+                moment through a lens,<br> I love creating things—both on and off the screen.</p> -->
 
             <p class="subtitle">I hope this website helps you learn a little bit more about me :)</p>
             <p class="subtitle">work in progress.</p>
@@ -41,8 +40,20 @@
             </div>
         </section>
             <div class="profile-container">
-                <img src="images/my-face-portrait.png" alt="Temp profile" class="profile-img">
-                <p class="profile-caption">*temp profile*</p>
+                <div class="movable-card-inner profile-frame">
+                    <img src="images/my-face-portrait.png" alt="Temp profile" class="movable-profile-img profile-face">
+                    <p class="profile-caption">*temp profile*</p>
+                </div>
+            </div>
+            <!-- Movable secondary profile card (user's portrait) -->
+            <div id="movable-placeholder" class="movable-placeholder" aria-hidden="true">
+                <span class="placeholder-label">me</span>
+            </div>
+            <div class="movable-card" id="movable-profile-card" aria-label="Movable profile card">
+                <div class="movable-card-inner">
+                    <img src="images/myportrait.JPG" alt="My portrait" class="movable-profile-img">
+                    <p class="movable-caption">Praewpiraya</p>
+                </div>
             </div>
         </div>
         <!-- <div class="button-group">
@@ -88,6 +99,10 @@
             const sf = document.createElement('script');
             sf.src = 'js/smooth_follower.js';
             document.body.appendChild(sf);
+            // movable profile card behavior (positioning + drag)
+            const mv = document.createElement('script');
+            mv.src = 'js/movable_profile.js';
+            document.body.appendChild(mv);
         }
         init();
     </script>

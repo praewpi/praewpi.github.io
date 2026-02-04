@@ -4,6 +4,80 @@
     box-sizing: border-box;
 }
 
+/* Movable profile card styles */
+.movable-card {
+    width: 240px;
+    pointer-events: auto;
+    cursor: grab;
+    user-select: none;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    border-radius: 12px;
+    position: fixed;
+    z-index: 5; /* above placeholder, beneath profile container */
+}
+
+.movable-card-inner {
+    background: #fff7ef;
+    padding: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 4px solid #f6ece0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movable-profile-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.movable-caption {
+    margin-top: 0.45rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #c14b3a;
+}
+
+@media (max-width: 768px) {
+    .movable-card { display: none; }
+}
+
+/* Dashed placeholder showing initial 'docked' position */
+.movable-placeholder {
+    position: fixed;
+    width: 268px;
+    height: 288px;
+    border-radius: 18px;
+    border: 4px dashed rgba(56, 118, 255, 0.95);
+    background: transparent;
+    pointer-events: auto;
+    z-index: 4; /* behind profile, beneath card */
+    box-shadow: none;
+    transform-origin: center center;
+    /* initial tilt to match the card */
+    transform: rotate(8deg);
+    transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.movable-placeholder .placeholder-label {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: rgba(56, 118, 255, 0.95);
+    background: transparent;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .movable-placeholder { display: none; }
+}
+
 :root {
     --ginger-size: 2.8rem;
     --site-bg: #fbf1dc;
@@ -271,29 +345,46 @@ main {
 
 .profile-container {
     flex: 0 0 260px;
-    transform: translateX(-2.25rem);
+    /* moved back right a bit so card docks on the right side */
+    transform: translateX(-4rem);
     will-change: transform;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     text-align: center;
+    width: 260px; /* match placeholder/card footprint */
 }
 
-.profile-img {
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-    border-radius: 999px;
-    border: 3px solid #000;
+/* Ensure profile sits above the movable card so the card can appear half-hidden */
+.profile-container { position: relative; z-index: 6; }
+
+.profile-face {
+    width: 100%;
+    height: auto;
     display: block;
+    border-radius: 6px;
+    object-fit: cover;
 }
 
 .profile-caption {
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
     color: #666;
-    margin-top: 0.25rem;
+    margin-top: 0.45rem;
+}
+
+/* Profile frame uses same polaroid/card look as movable card */
+.profile-frame {
+    width: 240px;
+    padding: 0.5rem;
+    border-radius: 12px;
+    background: #fff7ef;
+    border: 4px solid #f6ece0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (max-width: 768px) {
@@ -307,6 +398,7 @@ main {
     .profile-container {
         flex: none;
         margin-bottom: 1rem;
+        transform: none;
     }
 
     .aboutme-content {
