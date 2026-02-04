@@ -33,6 +33,40 @@
       "description": ""
     }
   ],
+  "education": [
+    {
+      "title": "SECCLO Master's Programme in Security and Cloud Computing (Erasmus Mundus)",
+      "position": "M.Sc., Computer Science",
+      "year": "2022 - 2024",
+      "location": "Double degree master programme",
+      "honors": "Graduated with Honors",
+      "description": "",
+      "tags": ["Master", "Computer Science"],
+      "partners": [
+        {
+          "name": "Aalto University",
+          "location": "Finland",
+          "position"  : "Master of Science - MS, Security and Cloud Computing",
+          "description": ""
+        },
+        {
+          "name": "EURECOM",
+          "location": "France",
+          "position"  : "Master of Science - MS, Security and Cloud Computing",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "title": "King Mongkut's University of Technology Thonburi (KMUTT)",
+      "position": "B.Eng., Computer Engineering",
+      "year": "2016 - 2020",
+      "location": "Thailand",
+      "honors": "First-Class Honors",
+      "description": "Graduated with First Class Honors. Coursework included algorithms, embedded systems, machine learning, and digital signal processing. Senior project: real-time sensor data pipeline for intelligent monitoring.",
+      "tags": ["Bachelor", "Computer Engineering"]
+    }
+  ],
   "extracurricularActivities": [
     {
       "title": "IQM Quantum School",
