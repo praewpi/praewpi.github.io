@@ -5,7 +5,8 @@
     function init() {
         const card = document.getElementById('movable-profile-card');
         const tempProfile = document.querySelector('.profile-container .profile-face');
-        if (!card) return;
+        const wrapper = document.querySelector('.aboutme-wrapper');
+        if (!card || !wrapper) return;
 
         // rely on CSS for position/z-index; ensure card uses left/top coordinates
 
@@ -15,17 +16,19 @@
         function setInitialPosition() {
             if (tempProfile) {
                 const r = tempProfile.getBoundingClientRect();
-                const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-                const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+                const wrapperRect = wrapper.getBoundingClientRect();
+                const wrapperW = wrapper.offsetWidth;
+                const wrapperH = wrapper.offsetHeight;
                 const cardWidth = 240; // match CSS
                 // offset the dock slightly upwards so the card sits higher
                 const offsetY = -20; // pixels to move up when docked
                 // position so the card tucks partly behind the temp profile on the right
                 const overlapFactor = 0.6; // proportion of card overlapping the profile (more hidden)
-                const left = clamp(r.right - cardWidth * overlapFactor, 8, vw - cardWidth - 8);
+                // compute left/top relative to the wrapper (absolute positioning context)
+                const left = clamp((r.right - wrapperRect.left) - cardWidth * overlapFactor, 8, wrapperW - cardWidth - 8);
                 // vertically center relative to the temp profile, then apply upward offset
-                const topCandidate = r.top + (r.height - cardWidth) / 2 + offsetY;
-                const top = clamp(topCandidate, 8, vh - cardWidth - 8);
+                const topCandidate = (r.top - wrapperRect.top) + (r.height - cardWidth) / 2 + offsetY;
+                const top = clamp(topCandidate, 8, wrapperH - cardWidth - 8);
                 card.style.left = Math.round(left) + 'px';
                 card.style.top = Math.round(top) + 'px';
                 if (placeholder) {
@@ -93,14 +96,14 @@
             ev.preventDefault();
             const dx = ev.clientX - startX;
             const dy = ev.clientY - startY;
-            const vw = window.innerWidth;
-            const vh = window.innerHeight;
+            const wrapperW = wrapper.offsetWidth;
+            const wrapperH = wrapper.offsetHeight;
             const cardRect = card.getBoundingClientRect();
             let newLeft = origLeft + dx;
             let newTop = origTop + dy;
-            // clamp to viewport with small margin
-            newLeft = clamp(newLeft, 8, vw - cardRect.width - 8);
-            newTop = clamp(newTop, 8, vh - cardRect.height - 8);
+            // clamp to wrapper bounds with small margin
+            newLeft = clamp(newLeft, 8, wrapperW - cardRect.width - 8);
+            newTop = clamp(newTop, 8, wrapperH - cardRect.height - 8);
             card.style.left = Math.round(newLeft) + 'px';
             card.style.top = Math.round(newTop) + 'px';
         });
@@ -117,10 +120,12 @@
         // double click to reset back to initial spot (animate)
         function animateToHome() {
             if (!placeholder) return setInitialPosition();
+            const wrapperRect = wrapper.getBoundingClientRect();
             const phRect = placeholder.getBoundingClientRect();
             const cardRect = card.getBoundingClientRect();
-            const targetLeft = Math.round(phRect.left + (phRect.width - cardRect.width) / 2);
-            const targetTop = Math.round(phRect.top + (phRect.height - cardRect.height) / 2);
+            // calculate target positions relative to the wrapper
+            const targetLeft = Math.round((phRect.left - wrapperRect.left) + (phRect.width - cardRect.width) / 2);
+            const targetTop = Math.round((phRect.top - wrapperRect.top) + (phRect.height - cardRect.height) / 2);
             card.style.transition = 'left 360ms cubic-bezier(.2,.9,.2,1), top 360ms cubic-bezier(.2,.9,.2,1)';
             card.style.left = targetLeft + 'px';
             card.style.top = targetTop + 'px';

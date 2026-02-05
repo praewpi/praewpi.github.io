@@ -32,10 +32,13 @@
 
     function resize(){
         const dpr = window.devicePixelRatio || 1;
-        canvas.width = Math.max(1, window.innerWidth * dpr);
-        canvas.height = Math.max(1, window.innerHeight * dpr);
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
+        // Use full document dimensions so drawings persist across scroll
+        const docWidth = Math.max(document.documentElement.scrollWidth, window.innerWidth);
+        const docHeight = Math.max(document.documentElement.scrollHeight, window.innerHeight);
+        canvas.width = Math.max(1, docWidth * dpr);
+        canvas.height = Math.max(1, docHeight * dpr);
+        canvas.style.width = docWidth + 'px';
+        canvas.style.height = docHeight + 'px';
         ctx.scale(dpr, dpr);
         ctx.lineCap = 'round';
         ctx.lineJoin = 'round';
@@ -93,12 +96,15 @@
 
     let last = null;
     function drawLine(x, y){
-        if (!last) { last = {x, y}; return; }
+        // Add scroll offset to get document coordinates
+        const docX = x + window.scrollX;
+        const docY = y + window.scrollY;
+        if (!last) { last = {x: docX, y: docY}; return; }
         ctx.beginPath();
         ctx.moveTo(last.x, last.y);
-        ctx.lineTo(x, y);
+        ctx.lineTo(docX, docY);
         ctx.stroke();
-        last = {x, y};
+        last = {x: docX, y: docY};
     }
 
     function onPointerMove(e){
