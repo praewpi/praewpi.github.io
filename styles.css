@@ -12,7 +12,7 @@
     user-select: none;
     transition: transform 160ms ease, box-shadow 160ms ease;
     border-radius: 12px;
-    position: fixed;
+    position: absolute;
     z-index: 5; /* above placeholder, beneath profile container */
 }
 
@@ -42,13 +42,11 @@
     color: #c14b3a;
 }
 
-@media (max-width: 768px) {
-    .movable-card { display: none; }
-}
+
 
 /* Dashed placeholder showing initial 'docked' position */
 .movable-placeholder {
-    position: fixed;
+    position: absolute;
     width: 268px;
     height: 288px;
     border-radius: 18px;
@@ -75,7 +73,28 @@
 }
 
 @media (max-width: 768px) {
-    .movable-placeholder { display: none; }
+    .movable-placeholder {
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+        transform: rotate(8deg) !important;
+        width: 268px !important;
+        height: 288px !important;
+        margin-top: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .movable-card {
+        position: relative;
+        left: auto !important;
+        top: auto !important;
+        transform: rotate(8deg) !important;
+        margin-top: -264px;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: grab;
+    }
 }
 
 :root {
@@ -288,11 +307,11 @@ nav a:hover,
 
 /* Canvas for drawing */
 #draw-canvas {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
-    min-height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 9998;
     pointer-events: none;
     /* don't block interactions */
@@ -467,6 +486,8 @@ main.one-pager {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 10; /* above movable card & placeholder */
 }
 
 @media (max-width: 768px) {
@@ -481,6 +502,11 @@ main.one-pager {
         flex: none;
         margin-bottom: 1rem;
         transform: none;
+        overflow: visible;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .aboutme-content {
