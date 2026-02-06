@@ -91,6 +91,12 @@
 
   window.addEventListener('mousemove', onMouseMove, { passive: true });
 
+  // Invert follower colors when hovering over the dark footer
+  window.addEventListener('mousemove', function(e){
+    const overFooter = !!(e.target && e.target.closest && e.target.closest('footer'));
+    container.classList.toggle('sf-inverted', overFooter);
+  }, { passive: true });
+
   // hide on first touch
   function onFirstTouch(){ container.style.display = 'none'; window.removeEventListener('touchstart', onFirstTouch); }
   window.addEventListener('touchstart', onFirstTouch, {passive:true});

@@ -60,9 +60,8 @@
             }
         }
 
-        // ensure image loaded before measuring
+        // ensure image loaded before measuring; only set initial position once
         window.requestAnimationFrame(setInitialPosition);
-        window.addEventListener('resize', setInitialPosition);
 
         // pointer drag handling
         let dragging = false;

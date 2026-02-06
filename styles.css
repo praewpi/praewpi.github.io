@@ -83,6 +83,11 @@
     --site-bg: #fbf1dc;
     --link-underline: #0a0600;
     --link-color: #000;
+    --header-h: 6rem; /* fallback; JS sets exact value */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -94,6 +99,14 @@ body {
     flex-direction: column;
 }
 
+/* Header wrapper - sticky so injected header stays at top */
+#site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--site-bg);
+}
+
 /* Header */
 header {
     display: flex;
@@ -101,6 +114,13 @@ header {
     align-items: center;
     padding: 2rem 3rem;
     border-bottom: 2px solid #000;
+    background-color: var(--site-bg);
+}
+
+/* Logo link inherits styling */
+.logo-link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo {
@@ -302,6 +322,69 @@ main {
     /* ensure main content is above the mouse spot canvas */
     position: relative;
     z-index: 2;
+}
+
+/* One-pager layout */
+main.one-pager {
+    align-items: stretch;
+    justify-content: flex-start;
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12rem;
+    text-align: left;
+}
+
+@media (max-width: 1200px) {
+    main.one-pager {
+        padding: 0 6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    main.one-pager {
+        padding: 0 1.25rem;
+    }
+}
+
+/* Page sections within one-pager */
+.page-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* When nav-scrolling to experience, its title sits flush under the sticky navbar */
+.page-section#experience {
+    scroll-margin-top: var(--header-h);
+}
+
+.page-section#about {
+    scroll-margin-top: var(--header-h);
+}
+
+/* Sub-section anchors inside experience */
+.subsection-header[id] {
+    scroll-margin-top: var(--header-h);
+}
+
+/* About section keeps centered content */
+.page-section .aboutme-wrapper {
+    padding: 2.5rem 0;
+}
+
+.page-section .aboutme-content {
+    transform: none;
+    width: min(86ch, 100%);
+    padding-left: 0;
+}
+
+/* Small italic note next to section title */
+.section-note {
+    font-size: 0.95rem;
+    color: #999;
+    font-style: italic;
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
 }
 
 
@@ -531,7 +614,12 @@ main h1 {
 /* Footer */
 footer {
     padding: 2rem 3rem;
-    border-top: 2px solid #000;
+    background-color: #000;
+    color: #fff;
+    border-top: none;
+    /* override shared link variables for inverted scheme */
+    --link-color: #fff;
+    --link-underline: #fff;
 }
 
 .footer-content {
@@ -552,17 +640,18 @@ footer {
     align-items: flex-start;
     gap: 0.5rem;
     font-weight: 600;
+    color: var(--site-bg);
 }
 
 .footer-logo p {
-    color: #999;
+    color: #aaa;
     font-weight: 400;
 }
 
 .footer-copyright {
     font-family: 'Courier New', monospace;
     font-size: 0.8rem;
-    color: #999;
+    color: #aaa;
     margin-top: 0.5rem;
 }
 
@@ -573,13 +662,13 @@ footer {
 
 .footer-nav a {
     text-decoration: none;
-    color: #666;
+    color: #aaa;
     font-size: 0.9rem;
     transition: color 0.2s;
 }
 
 .footer-nav a:hover {
-    color: #000;
+    color: #fff;
 }
 
 .footer-right {
@@ -588,12 +677,12 @@ footer {
 }
 
 .footer-right a {
-    color: #666;
+    color: #aaa;
     transition: color 0.2s;
 }
 
 .footer-right a:hover {
-    color: #000;
+    color: #fff;
 }
 
 /* Responsive */
@@ -656,10 +745,9 @@ footer {
     }
 }
 
-/* Experience / Extracurricular sections (scoped to experience page) */
+/* Experience / Extracurricular sections (scoped to experience page — kept for backward compat) */
 body.experience-page main {
     align-items: stretch;
-    /* allow full width so header/title/meta can sit far left/right */
     max-width: none;
     width: 100%;
     margin: 0 auto;
@@ -689,6 +777,35 @@ body.experience-page main {
 .section-title {
     font-size: 2rem;
     font-weight: 700;
+}
+
+/* Full-width divider that breaks out of main padding to span edge-to-edge */
+.divider.full-width {
+    margin-left: -12rem;
+    margin-right: -12rem;
+}
+
+@media (max-width: 1200px) {
+    .divider.full-width {
+        margin-left: -6rem;
+        margin-right: -6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .divider.full-width {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+    }
+}
+
+/* Sub-section titles within the experience section */
+.subsection-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
 }
 
 .section-meta {
@@ -893,6 +1010,15 @@ body.experience-page main {
     .sf-border {
         border-color: #000;
     }
+}
+
+/* Invert follower when over the dark footer */
+.sf-container.sf-inverted .sf-dot {
+    background: var(--site-bg);
+}
+
+.sf-container.sf-inverted .sf-border {
+    border-color: var(--site-bg);
 }
 
 @media (pointer: coarse),
