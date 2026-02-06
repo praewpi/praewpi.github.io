@@ -1,0 +1,54 @@
+{
+  "categories": [
+    {
+      "name": "Programming Languages",
+      "items": [
+        "Python",
+        "C/C++",
+        "Java",
+        "MATHLAB",
+        "SQL",
+        "NoSQL",
+        "Scripting (Bash)"
+      ]
+    },
+    {
+      "name": "DevOps & Cloud",
+      "items": [
+        "Kubernetes",
+        "Docker",
+        "Terraform",
+        "Ansible",
+        "Jenkins",  
+        "Git",
+        "Prometheus", 
+        "Grafana",
+        "Openstack",
+        "AWS",
+        "Azure",
+        "GCP" 
+      ]
+    },
+    {
+      "name": "Techniques",
+      "items": [
+        "Machine Learning",
+        "Reinforcement Learning"
+      ]
+    },
+    {
+      "name": "Methods",
+      "items": [
+        "Design Thinking Method( Empathize, Define, Ideate, Prototype, Test )"
+      ]
+    },
+    {
+      "name": "Languages",
+      "items": [
+        "Thai (Native)",
+        "English (Professional proficiency: IELTS 7.0)",
+        "Japanese (Completed basic courses)"
+      ]
+    }
+  ]
+}

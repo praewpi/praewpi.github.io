@@ -49,10 +49,9 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="button-group">
-            <button class="btn-primary">Call to action</button>
-            <button class="btn-secondary">Secondary</button>
-        </div> -->
+
+        <!-- Skills Section (loaded from skills.html + data/skills.json) -->
+        <div id="skills-section"></div>
     </main>
 
     <!-- Canvas for drawing -->
@@ -96,6 +95,12 @@
             const mv = document.createElement('script');
             mv.src = 'js/movable_profile.js';
             document.body.appendChild(mv);
+
+            // load skills section HTML, then populate from JSON
+            await includeHTML('skills-section', 'skills.html');
+            const sk = document.createElement('script');
+            sk.src = 'js/skills.js';
+            document.body.appendChild(sk);
 
             // env + likes (env must load first so likes.js can read window.__ENV__)
             const env = document.createElement('script');
