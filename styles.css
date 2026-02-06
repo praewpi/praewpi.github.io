@@ -372,6 +372,21 @@ main.one-pager {
     padding-bottom: 2rem;
 }
 
+/* About section fills the viewport (minus the sticky header) */
+.page-section#about {
+    min-height: calc(100vh - var(--header-h));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Also handle the non-one-pager layout where aboutme-wrapper is a direct child of main */
+main > .aboutme-wrapper {
+    min-height: calc(100vh - var(--header-h));
+    display: flex;
+    align-items: center;
+}
+
 /* When nav-scrolling to experience, its title sits flush under the sticky navbar */
 .page-section#experience {
     scroll-margin-top: var(--header-h);
@@ -1182,26 +1197,26 @@ body.experience-page main {
     margin: 0 auto;
 }
 
-/* Full-width lines above and below the skills header */
+/* Full-width lines above and below the skills header — spans entire viewport */
 .skills-line {
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.8);
     margin: 0;
-    margin-left: -12rem;
-    margin-right: -12rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 @media (max-width: 1200px) {
     .skills-line {
-        margin-left: -6rem;
-        margin-right: -6rem;
+        /* same full-viewport technique works at all breakpoints */
     }
 }
 
 @media (max-width: 768px) {
     .skills-line {
-        margin-left: -1.25rem;
-        margin-right: -1.25rem;
+        /* same full-viewport technique works at all breakpoints */
     }
 }
 
