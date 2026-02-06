@@ -176,6 +176,48 @@ nav a.about-link:hover .about-caret {
     transform: translate(-20px, -75%) rotate(-25deg);
 }
 
+/* briefcase icon above 'experience' link on hover */
+nav a.experience-link {
+    position: relative;
+    display: inline-block;
+}
+
+/* briefcase tilts right */
+nav a.experience-link .experience-icon {
+    position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translate(-50%, -100%) rotate(-8deg);
+    width: 22px;
+    height: 22px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 180ms cubic-bezier(.2, .9, .2, 1);
+}
+
+nav a.experience-link:hover .experience-icon {
+    opacity: 1;
+    transform: translate(-50%, -110%) rotate(-15deg);
+}
+
+/* award icon tilts left */
+nav a.experience-link .award-icon {
+    position: absolute;
+    right: 20%;
+    top: 0;
+    transform: translate(50%, -90%) rotate(8deg);
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease 40ms, transform 200ms cubic-bezier(.2, .9, .2, 1) 40ms;
+}
+
+nav a.experience-link:hover .award-icon {
+    opacity: 1;
+    transform: translate(50%, -100%) rotate(15deg);
+}
+
 nav a,
 .connect-menu a,
 .footer-nav a {
@@ -216,6 +258,24 @@ nav a:hover,
 .connect-dropdown {
     position: relative;
     display: inline-block;
+}
+
+/* coffee icon above 'connect' on hover */
+.connect-dropdown .connect-coffee {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -100%);
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 180ms cubic-bezier(.2, .9, .2, 1);
+}
+
+.connect-dropdown:hover .connect-coffee {
+    opacity: 1;
+    transform: translate(-50%, -110%);
 }
 
 #connect-btn {
