@@ -711,6 +711,114 @@ footer {
     color: #fff;
 }
 
+/* ── Like heart button ─────────────────────────── */
+.like-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #aaa;
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* Show outline by default, hide filled */
+.like-btn .heart-filled  { display: none; }
+.like-btn .heart-outline { display: block; }
+
+/* Hover: tint pink */
+.like-btn:hover {
+    color: #ff6b8a;
+}
+.like-btn:hover .heart-outline {
+    stroke: #ff6b8a;
+}
+
+/* Liked (clicked) state – show filled, hide outline */
+.like-btn.liked .heart-outline { display: none; }
+.like-btn.liked .heart-filled  { display: block; }
+.like-btn.liked { color: #ff6b8a; }
+
+/* Pop animation on click */
+.like-btn.pop {
+    animation: heart-pop 0.4s ease;
+}
+
+@keyframes heart-pop {
+    0%   { transform: scale(1);   }
+    30%  { transform: scale(1.35); }
+    60%  { transform: scale(0.9);  }
+    100% { transform: scale(1);    }
+}
+
+/* Speech-bubble like count */
+.like-bubble {
+    position: relative;
+    background: #fbf1dc;
+    color: #000;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    line-height: 1.4;
+    white-space: nowrap;
+    user-select: none;
+}
+
+/* Small triangle pointing left */
+.like-bubble::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 5px 6px 5px 0;
+    border-style: solid;
+    border-color: transparent #fbf1dc transparent transparent;
+}
+
+/* Floating heart particles container */
+.heart-particles {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.heart-particle {
+    position: absolute;
+    font-size: 1rem;
+    color: #ff6b8a;
+    opacity: 0;
+    pointer-events: none;
+    animation: float-heart var(--d, 600ms) ease-out forwards;
+    transform: scale(var(--s, 1));
+}
+
+@keyframes float-heart {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(var(--s, 1));
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x, 0px), var(--y, -50px)) scale(0.2);
+    }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     header {

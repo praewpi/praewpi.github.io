@@ -96,6 +96,16 @@
             const mv = document.createElement('script');
             mv.src = 'js/movable_profile.js';
             document.body.appendChild(mv);
+
+            // env + likes (env must load first so likes.js can read window.__ENV__)
+            const env = document.createElement('script');
+            env.src = 'env.js';
+            env.onload = function () {
+                const lk = document.createElement('script');
+                lk.src = 'js/likes.js';
+                document.body.appendChild(lk);
+            };
+            document.body.appendChild(env);
         }
         init();
     </script>

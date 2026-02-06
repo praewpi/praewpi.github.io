@@ -102,6 +102,16 @@
         const h = document.createElement('script');
         h.src = 'js/header.js';
         document.body.appendChild(h);
+
+        // env + likes
+        const env = document.createElement('script');
+        env.src = 'env.js';
+        env.onload = function () {
+            const lk = document.createElement('script');
+            lk.src = 'js/likes.js';
+            document.body.appendChild(lk);
+        };
+        document.body.appendChild(env);
     }
     init();
     </script>
