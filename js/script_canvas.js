@@ -32,9 +32,11 @@
 
     function resize(){
         const dpr = window.devicePixelRatio || 1;
-        // Use viewport dimensions for fixed-position canvas
-        const w = window.innerWidth;
-        const h = window.innerHeight;
+        // Collapse canvas before measuring so it doesn't inflate scrollHeight
+        canvas.style.display = 'none';
+        const w = Math.max(document.documentElement.scrollWidth, window.innerWidth);
+        const h = Math.max(document.documentElement.scrollHeight, window.innerHeight);
+        canvas.style.display = '';
         canvas.width = Math.max(1, w * dpr);
         canvas.height = Math.max(1, h * dpr);
         canvas.style.width = w + 'px';
@@ -50,8 +52,8 @@
     resize();
 
     function moveIconTo(x, y){
-        icon.style.left = (x + 12) + 'px';
-        icon.style.top = (y + 12) + 'px';
+        icon.style.left = (x + window.scrollX + 12) + 'px';
+        icon.style.top = (y + window.scrollY + 12) + 'px';
     }
 
     function startGlobal(startX, startY){
@@ -60,9 +62,9 @@
             originalParent = icon.parentNode;
             originalNext = icon.nextSibling;
         }
-        // set fixed positioning and initialize to current pointer so it doesn't jump to top-left
-        icon.style.position = 'fixed';
-        icon.style.zIndex = 9999;
+        // set absolute positioning so the icon stays in place when scrolling
+        icon.style.position = 'absolute';
+        icon.style.zIndex = 9997;
         if (typeof startX === 'number' && typeof startY === 'number'){
             moveIconTo(startX, startY);
         }
@@ -96,13 +98,15 @@
 
     let last = null;
     function drawLine(x, y){
-        // Use viewport coordinates directly (canvas is fixed-position)
-        if (!last) { last = {x: x, y: y}; return; }
+        // Use page coordinates (client + scroll) since canvas is absolute-positioned
+        const px = x + window.scrollX;
+        const py = y + window.scrollY;
+        if (!last) { last = {x: px, y: py}; return; }
         ctx.beginPath();
         ctx.moveTo(last.x, last.y);
-        ctx.lineTo(x, y);
+        ctx.lineTo(px, py);
         ctx.stroke();
-        last = {x: x, y: y};
+        last = {x: px, y: py};
     }
 
     function onPointerMove(e){
@@ -153,7 +157,7 @@
             if (isGlobal) {
                 isGlobal = false;
                 resetGingerToOriginal();
-            } else if (icon.style.position === 'fixed') {
+            } else if (icon.style.position === 'absolute') {
                 resetGingerToOriginal();
             }
         });

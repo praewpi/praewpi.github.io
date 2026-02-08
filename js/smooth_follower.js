@@ -89,10 +89,10 @@
     }
   }, { passive: true });
 
-  window.addEventListener('mousemove', onMouseMove, { passive: true });
+  window.addEventListener('pointermove', onMouseMove, { passive: true });
 
   // Invert follower colors when hovering over the dark footer
-  window.addEventListener('mousemove', function(e){
+  window.addEventListener('pointermove', function(e){
     const overFooter = !!(e.target && e.target.closest && e.target.closest('footer'));
     container.classList.toggle('sf-inverted', overFooter);
   }, { passive: true });
