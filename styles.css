@@ -38,7 +38,7 @@
 .movable-caption {
     margin-top: 0.45rem;
     font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #c14b3a;
 }
 
@@ -66,7 +66,7 @@
     right: 10px;
     bottom: 8px;
     font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     color: rgba(56, 118, 255, 0.95);
     background: transparent;
     pointer-events: none;
@@ -473,7 +473,7 @@ main > .aboutme-wrapper {
 
 /* Small italic note next to section title */
 .section-note {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     color: #999;
     font-style: italic;
     font-family: 'Courier New', monospace;
@@ -544,7 +544,7 @@ main > .aboutme-wrapper {
 
 .profile-caption {
     font-family: 'Courier New', monospace;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #666;
     margin-top: 0.45rem;
 }
@@ -617,6 +617,7 @@ main h1 {
 .aboutme-content .subtitle,
 .aboutme-content .icon-row p {
     font-family: 'Courier New', monospace;
+    font-size: 1.15rem;
 }
 
 /* Ginger emoji control */
@@ -658,7 +659,7 @@ main h1 {
 
 #click-me-text {
     font-family: 'Courier New', monospace;
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     color: #999;
     margin: 0;
     position: relative;
@@ -1337,7 +1338,7 @@ body.experience-page main {
     border: 1.5px solid #000;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
-    font-size: 0.88rem;
+    font-size: 1.08rem;
     color: #000;
     background: transparent;
     white-space: nowrap;
@@ -1372,7 +1373,7 @@ body.experience-page main {
     }
 
     .skill-tag {
-        font-size: 0.8rem;
+        font-size: 1.0rem;
         padding: 0.3rem 0.65rem;
         white-space: normal;
         word-break: break-word;
