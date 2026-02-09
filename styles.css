@@ -107,6 +107,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
 }
 
 body {
@@ -466,12 +467,8 @@ main > .aboutme-wrapper {
 /* About section keeps centered content */
 .page-section .aboutme-wrapper {
     padding: 2.5rem 0;
-}
-
-.page-section .aboutme-content {
-    transform: none;
-    width: min(86ch, 100%);
-    padding-left: 0;
+    min-height: calc(100vh - var(--header-h));
+    align-items: center;
 }
 
 /* Small italic note next to section title */
@@ -1018,7 +1015,7 @@ body.experience-page main {
 .subsection-title {
     font-size: 1.3rem;
     font-weight: 600;
-    margin-top: 2.5rem;
+    margin-top: 0;
     margin-bottom: 0.5rem;
     color: #333;
 }
@@ -1256,11 +1253,15 @@ body.experience-page main {
 }
 
 /* ── Skills section ─────────────────────────────── */
-.skills-section {
-    padding: 2rem 0;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
+.skills-section.page-section {
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    scroll-margin-top: var(--header-h);
 }
 
 /* Full-width lines above and below the skills header — spans entire viewport */
@@ -1290,17 +1291,17 @@ body.experience-page main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 0;
-    padding-left: clamp(2rem, 4vw, 2rem);
-
+    padding: 0.6rem 3rem;
 }
 
 .skills-grid {
     display: flex;
     flex-direction: column;
     gap: 2.2rem;
-    margin: 1.5rem 0;
-    padding-left: 2rem;
+    margin: 1.5rem auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 1200px;
 }
 
 .skills-row {
@@ -1308,6 +1309,13 @@ body.experience-page main {
     grid-template-columns: 200px 1fr;
     align-items: baseline;
     gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .skills-row {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
 }
 
 .skills-category {
@@ -1345,6 +1353,7 @@ body.experience-page main {
     .skills-row {
         grid-template-columns: 1fr;
         gap: 0.6rem;
+        text-align: left;
     }
 
     .skills-category {
@@ -1353,5 +1362,50 @@ body.experience-page main {
 
     .skills-header {
         gap: 0.5rem;
+        padding-left: 1.5rem;
+    }
+
+    .skills-grid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1.5rem;
+    }
+
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.65rem;
+        white-space: normal;
+        word-break: break-word;
+    }
+}
+        padding: 0.3rem 0.65rem;
+    }
+}
+
+/* ── Experience section (one-pager) ─────────────── */
+.experience-section.page-section {
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    scroll-margin-top: var(--header-h);
+}
+
+.experience-subsections {
+    padding: 1.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .experience-subsections {
+        padding: 1rem 1.25rem;
     }
 }

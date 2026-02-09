@@ -18,53 +18,21 @@
 
     <!-- Main Content -->
     <main>
-        <div class="aboutme-wrapper">
-            <section class="aboutme-content">
-                <h1>praewpiraya wiwatphonthana</h1>
-            <p class="subtitle">MSc in security and cloud computing</p>
-            <p class="subtitle">Hi, I’m Ginger! </p>
-            <p class="subtitle">I love learning new things and I’m curious about all things tech. <br> I’m happiest when I solved challenging problems and picked up new skill.</p>
-
-            <p class="subtitle">I hope this website helps you learn a little bit more about me :)</p>
-            <p class="subtitle">This website is currently a work in progress.</p>
-            <p class="subtitle">Thank you for visiting.</p>
-            <div class="icon-row">
-                <button type="button" class="ginger-icon" id="ginger-icon" aria-label="Ginger">🫚</button>
-                <p id="click-me-text">* click me *</p>
-            </div>
-        </section>
-            <div class="profile-container">
-                <div class="movable-card-inner profile-frame">
-                    <img src="images/my-face-portrait.png" alt="Temp profile" class="movable-profile-img profile-face">
-                    <p class="profile-caption">*temp profile*</p>
-                </div>
-                <!-- Movable secondary profile card (portrait) -->
-                <div id="movable-placeholder" class="movable-placeholder" aria-hidden="true">
-                    <span class="placeholder-label">me</span>
-                </div>
-                <div class="movable-card" id="movable-profile-card" aria-label="Movable profile card">
-                    <div class="movable-card-inner">
-                        <img src="images/myportrait.JPG" alt="My portrait" class="movable-profile-img">
-                        <p class="movable-caption">Praewpiraya</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <div id="aboutme-section"></div>
 
         
         <!-- Skills Section (loaded from skills.html + data/skills.json) -->
         <div id="skills-section"></div>
+
+        <!-- Experience Section (loaded from experience.html + data/experience.json) -->
+        <div id="experience-section"></div>
     </main>
 
     <!-- Canvas for ginger drawing – at body level so it spans the full page -->
     <canvas id="draw-canvas" aria-hidden="true"></canvas>
 
     <div id="site-footer"></div>
-
-                <!-- Canvas for drawing -->
             
-
     <!-- <canvas id="mouse-spot-canvas" aria-hidden="true"></canvas> -->
 
     <script>
@@ -79,6 +47,18 @@
         async function init() {
             await includeHTML('site-header', 'header.html');
             await includeHTML('site-footer', 'footer.html');
+
+            // Measure actual header height (sticky wrapper) and set CSS variable
+            const siteHeader = document.getElementById('site-header');
+            if (siteHeader) {
+                const setH = () => document.documentElement.style.setProperty('--header-h', siteHeader.offsetHeight + 'px');
+                setH();
+                window.addEventListener('resize', setH);
+            }
+
+            // load about me section HTML
+            await includeHTML('aboutme-section', 'aboutme.html');
+
             // load shared header behaviors (connect dropdown) and drawing script
             const h = document.createElement('script');
             h.src = 'js/header.js';
@@ -107,6 +87,12 @@
             const sk = document.createElement('script');
             sk.src = 'js/skills.js';
             document.body.appendChild(sk);
+
+            // load experience section HTML, then populate from JSON
+            await includeHTML('experience-section', 'experience.html');
+            const ex = document.createElement('script');
+            ex.src = 'js/experience.js';
+            document.body.appendChild(ex);
 
             // env + likes (env must load first so likes.js can read window.__ENV__)
             const env = document.createElement('script');

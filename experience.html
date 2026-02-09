@@ -1,130 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- experience.html — loaded into #experience-section via includeHTML -->
+<section id="experience" class="page-section experience-section">
+    <hr id="experience-top" class="skills-line">
+    <div class="skills-header">
+        <h2 class="section-title">experience</h2>
+    </div>
+    <hr class="skills-line">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ginger - Experience</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
-</head>
-
-<body class="experience-page">
-    <div id="site-header"></div>
-
-    <main>
-
+    <div class="experience-subsections">
         <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <!-- <div class="section-meta">Years of Experience → <strong>4.5</strong></div> -->
+                <h3 class="subsection-title">Work Experience</h3>
             </div>
-
             <hr class="divider">
-
             <div class="experience-list list-block" id="experience-list"></div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Education</h2>
+                <h3 class="subsection-title">Education</h3>
             </div>
-
             <hr class="divider">
-
             <div class="experience-list list-block" id="education-list"></div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Achievements & Awards</h2>
+                <h3 class="subsection-title">Achievements & Awards</h3>
             </div>
-
             <hr class="divider">
-
             <div class="experience-list list-block" id="achievements-list"></div>
         </section>
 
         <section class="section">
             <div class="section-header">
-                <h2 class="section-title">Extracurricular Activities</h2>
+                <h3 class="subsection-title">Extracurricular Activities</h3>
             </div>
-
             <hr class="divider">
-
             <div class="experience-list list-block" id="extracurricular-list"></div>
         </section>
+    </div>
 
-    </main>
-
-    <div id="site-footer"></div>
-
-        <template id="exp-tpl">
-            <article class="exp-item">
-                <div class="exp-row">
-                    <div class="exp-content">
-                        <div class="exp-title"></div>
-                        <div class="exp-subtitle"></div>
-                        <div class="exp-location"></div>
-                    </div>
-                    <div class="exp-meta">
-                        <div class="exp-year"></div>
-                        <div class="exp-arrow" aria-hidden="true">
-                            <svg class="exp-arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </div>
+    <template id="exp-tpl">
+        <article class="exp-item">
+            <div class="exp-row">
+                <div class="exp-content">
+                    <div class="exp-title"></div>
+                    <div class="exp-subtitle"></div>
+                    <div class="exp-location"></div>
+                </div>
+                <div class="exp-meta">
+                    <div class="exp-year"></div>
+                    <div class="exp-arrow" aria-hidden="true">
+                        <svg class="exp-arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
                     </div>
                 </div>
-                <div class="exp-detail" aria-hidden="true">
-                    <div class="exp-detail-inner"></div>
-                </div>
-            </article>
-        </template>
-
-    <script>
-    async function includeHTML(id, url){
-        try{
-            const res = await fetch(url);
-            if(!res.ok) return;
-            document.getElementById(id).innerHTML = await res.text();
-        }catch(e){/* fail silently */}
-    }
-
-    async function init(){
-        await includeHTML('site-header','header.html');
-        await includeHTML('site-footer','footer.html');
-        // load shared header behaviors so connect dropdown works
-        const h = document.createElement('script');
-        h.src = 'js/header.js';
-        document.body.appendChild(h);
-
-        // env + likes
-        const env = document.createElement('script');
-        env.src = 'env.js';
-        env.onload = function () {
-            const lk = document.createElement('script');
-            lk.src = 'js/likes.js';
-            document.body.appendChild(lk);
-        };
-        document.body.appendChild(env);
-    }
-    init();
-    </script>
-
-    <script src="js/experience.js" defer></script>
-
-    <!--
-    <canvas id="mouse-spot-canvas" aria-hidden="true"></canvas>
-    <script src="js/mouse_spot.js" defer></script>
-    -->
-
-    <!-- cursor smooth follower -->
-    <script src="js/smooth_follower.js" defer></script>
-</body>
-
-</html>
+            </div>
+            <div class="exp-detail" aria-hidden="true">
+                <div class="exp-detail-inner"></div>
+            </div>
+        </article>
+    </template>
+</section>
