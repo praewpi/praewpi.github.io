@@ -51,6 +51,11 @@
     window.addEventListener('resize', resize);
     resize();
 
+    // Re-size canvas when page content changes (e.g. skills section loaded async)
+    var _resizeTimer;
+    function debouncedResize(){ clearTimeout(_resizeTimer); _resizeTimer = setTimeout(resize, 100); }
+    new ResizeObserver(debouncedResize).observe(document.body);
+
     function moveIconTo(x, y){
         icon.style.left = (x + window.scrollX + 12) + 'px';
         icon.style.top = (y + window.scrollY + 12) + 'px';
@@ -70,7 +75,12 @@
         }
         document.body.appendChild(icon);
         icon.classList.add('active');
-        if (clickMeText) clickMeText.style.display = 'none';
+        if (clickMeText) {
+            clickMeText.style.display = 'none';
+            clickMeText.style.position = '';
+            clickMeText.style.left = '';
+            clickMeText.style.top = '';
+        }
         document.addEventListener('mousemove', onPointerMove);
         document.addEventListener('touchmove', onTouchMove, {passive:true});
     }
@@ -79,7 +89,16 @@
         document.removeEventListener('mousemove', onPointerMove);
         document.removeEventListener('touchmove', onTouchMove);
         icon.classList.remove('active');
-        // ginger stays in place (fixed position)
+        // show "click me" text under the ginger's current location
+        if (clickMeText) {
+            clickMeText.style.position = 'absolute';
+            clickMeText.style.left = icon.style.left;
+            clickMeText.style.top = (parseFloat(icon.style.top) + icon.offsetHeight + 4) + 'px';
+            clickMeText.style.zIndex = 9997;
+            clickMeText.style.transform = 'translateX(-50%)';
+            clickMeText.style.display = 'block';
+            document.body.appendChild(clickMeText);
+        }
     }
 
     function resetGingerToOriginal(){
@@ -92,7 +111,16 @@
             icon.style.left = '';
             icon.style.top = '';
             icon.style.zIndex = '';
-            if (clickMeText) clickMeText.style.display = 'block';
+            if (clickMeText) {
+                // move text back to original parent (icon-row) and clear inline styles
+                originalParent.appendChild(clickMeText);
+                clickMeText.style.position = '';
+                clickMeText.style.left = '';
+                clickMeText.style.top = '';
+                clickMeText.style.zIndex = '';
+                clickMeText.style.transform = '';
+                clickMeText.style.display = 'block';
+            }
         }
     }
 
