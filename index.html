@@ -26,6 +26,9 @@
 
         <!-- Experience Section (loaded from experience.html + data/experience.json) -->
         <div id="experience-section"></div>
+
+        <!-- Hobbies Section (loaded from hobbies.html) -->
+        <div id="hobbies-section"></div>
     </main>
 
     <!-- Canvas for ginger drawing – at body level so it spans the full page -->
@@ -88,11 +91,15 @@
             sk.src = 'js/skills.js';
             document.body.appendChild(sk);
 
+
             // load experience section HTML, then populate from JSON
             await includeHTML('experience-section', 'experience.html');
             const ex = document.createElement('script');
             ex.src = 'js/experience.js';
             document.body.appendChild(ex);
+
+            // load hobbies section HTML
+            await includeHTML('hobbies-section', 'hobbies.html');
 
             // env + likes (env must load first so likes.js can read window.__ENV__)
             const env = document.createElement('script');
