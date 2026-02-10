@@ -2,7 +2,7 @@
   "workExperience": [
     {
       "title": "Ericsson",
-      "position": "Master Thesis Research Intern",
+      "position": "Master’s Thesis Worker",
       "year": "Mar 2024 - Dec 2024",
       "location": "Finland",
       "tags": ["Internship", "Research"],
@@ -86,7 +86,7 @@
       "location": "Online",
       "position": "Participant",
       "year": "2022",
-      "description": "Three-week intensive summer school featuring hands-on tutorials and collaborative group projects focused on deep learning methods applied to neuroscience."
+      "description": "Three-week intensive summer school featuring hands-on tutorials and collaborative group projects focused on deep learning methods applied to neuroscience. Our group built an RL model to imitate human and pigeon risky-choice behavior."
     },
     {
       "title": "Lunghwa University Holiday School (Language and Culture Camp)",
