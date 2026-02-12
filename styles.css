@@ -15,7 +15,7 @@
 .exp-skills {
     margin-top: 0.4em;
 }
-/* Hobbies section layout to match experience */
+/* Hobbies section */
 .hobbies-subsections {
     padding: 1.5rem 3rem;
     max-width: 1200px;
@@ -24,7 +24,9 @@
     flex-direction: row;
     gap: 1.5rem;
     text-align: left;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 @media (max-width: 768px) {
     .hobbies-subsections {
@@ -35,30 +37,26 @@
     gap: 1.5rem;
     margin-top: 0;
     justify-content: flex-start;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* Hobbies Section */
 .hobbies-section.page-section {
     padding: 0;
     padding-top: 0;
-    .skill-tag-small {
-        font-size: 0.88rem;
-        padding: 0.18rem 0.55rem;
-        border-width: 1px;
-        margin-right: 0.25rem;
-        margin-bottom: 0.15rem;
-        opacity: 0.92;
-    } 
-    padding: 1.5rem 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    text-align: left;
-    font-size: 1.2rem;
-    color: #444;
-    align-items: center;
-    flex-wrap: wrap;
+    padding-bottom: 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    scroll-margin-top: var(--header-h);
+    text-align: center;
+    .hobbies-section.page-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 .hobbies-section .skills-header {
     margin-bottom: 0;
@@ -73,6 +71,7 @@
     gap: 0.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
+    text-align: center;
 }
 .hobby-item {
     font-weight: 500;
@@ -608,6 +607,10 @@ main > .aboutme-wrapper {
     /* moved back right a bit so card docks on the right side */
     transform: translateX(-4rem);
     will-change: transform;
+    .hobbies-subsections {
+        justify-content: center;
+        width: 100%;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1061,8 +1064,9 @@ body.experience-page main {
 
 @media (max-width: 768px) {
     body.experience-page main {
-        padding: 2rem 1.25rem;
-    }
+            justify-content: center;
+            align-items: center;
+            text-align: center;
 }
 
 .section-header {
@@ -1072,9 +1076,12 @@ body.experience-page main {
     gap: 1rem;
     margin-top: 1.2rem;
 }
-
-.section-title {
-    font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        text-align: center;
     font-weight: 700;
 }
 
@@ -1475,9 +1482,6 @@ body.experience-page main {
         word-break: break-word;
     }
 }
-        padding: 0.3rem 0.65rem;
-    }
-
 /* ── Experience section (one-pager) ─────────────── */
 .experience-section.page-section {
     padding: 0;
