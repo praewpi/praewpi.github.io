@@ -30,6 +30,35 @@
         //`position` for work items, `subtitle` for other sections
         const subtitleText = e.position ?? e.subtitle ?? '';
         if(subtitle) subtitle.textContent = subtitleText;
+
+        // For achievements/awards: show awardDetail above location, with icon and color by type
+        if (containerId === 'achievements-list' && e.awardDetail) {
+          const awardDiv = document.createElement('div');
+          awardDiv.className = 'award-detail';
+          let icon = '';
+          let color = '';
+          if (e.type === 'award') {
+            icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award" style="vertical-align:middle;margin-right:0.3em;"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>';
+            color = '#c17a00'; // gold
+          } else if (e.type === 'finalist') {
+            icon = '';
+            color = '#4a5a6a'; // neutral blue/gray
+          } else if (e.type === 'scholarship') {
+            icon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star" style="vertical-align:middle;margin-right:0.3em;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+            color = '#4a6fa5'; // muted blue
+          }
+          awardDiv.innerHTML = icon;
+          awardDiv.style.color = color;
+          const textSpan = document.createElement('span');
+          textSpan.textContent = e.awardDetail;
+          awardDiv.appendChild(textSpan);
+          // Insert above location
+          if (location && location.parentNode) {
+            location.parentNode.insertBefore(awardDiv, location);
+          } else {
+            articleEl.insertBefore(awardDiv, articleEl.firstChild);
+          }
+        }
         if(location) {
           if (e.location) {
             location.textContent = e.location;
