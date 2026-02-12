@@ -1,21 +1,4 @@
-.skill-tag-small:hover {
-    background: #000 !important;
-    color: var(--site-bg) !important;
-    border-color: #fff !important;
-}
-.award-detail {
-    display: flex;
-    align-items: center;
-    font-size: 1.02rem;
-    font-weight: 500;
-    margin-bottom: 0.18em;
-    color: #ce9308; /* matches .exp-honors */
-    gap: 0.3em;
-}
-.exp-skills {
-    margin-top: 0.4em;
-}
-/* Hobbies section */
+/* Hobbies section layout to match experience */
 .hobbies-subsections {
     padding: 1.5rem 3rem;
     max-width: 1200px;
@@ -24,9 +7,7 @@
     flex-direction: row;
     gap: 1.5rem;
     text-align: left;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    justify-content: flex-start;
 }
 @media (max-width: 768px) {
     .hobbies-subsections {
@@ -37,9 +18,6 @@
     gap: 1.5rem;
     margin-top: 0;
     justify-content: flex-start;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 /* Hobbies Section */
 .hobbies-section.page-section {
@@ -51,12 +29,19 @@
     left: 50%;
     transform: translateX(-50%);
     scroll-margin-top: var(--header-h);
-    text-align: center;
-    .hobbies-section.page-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+}
+.hobbies-list {
+    padding: 1.5rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #444;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .hobbies-section .skills-header {
     margin-bottom: 0;
@@ -71,7 +56,6 @@
     gap: 0.5rem;
     flex-wrap: wrap;
     margin-top: 1rem;
-    text-align: center;
 }
 .hobby-item {
     font-weight: 500;
@@ -431,6 +415,24 @@ nav a:hover,
     /* allow ::before underline */
 }
 
+.connect-menu a[aria-label="Google Scholar"] svg {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+}
+
+.connect-menu a[aria-label="Google Scholar"] svg {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+}
+
 .connect-menu a:hover {
     opacity: 0.7;
 }
@@ -607,10 +609,6 @@ main > .aboutme-wrapper {
     /* moved back right a bit so card docks on the right side */
     transform: translateX(-4rem);
     will-change: transform;
-    .hobbies-subsections {
-        justify-content: center;
-        width: 100%;
-    }
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1064,9 +1062,8 @@ body.experience-page main {
 
 @media (max-width: 768px) {
     body.experience-page main {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        padding: 2rem 1.25rem;
+    }
 }
 
 .section-header {
@@ -1074,14 +1071,10 @@ body.experience-page main {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-top: 1.2rem;
 }
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 1rem;
-        text-align: center;
+
+.section-title {
+    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -1438,19 +1431,9 @@ body.experience-page main {
     transition: background 180ms ease, color 180ms ease;
 }
 
-.skill-tag-small {
-    font-size: 0.88rem;
-    padding: 0.18rem 0.55rem;
-    border-width: 1px;
-    margin-right: 0.25rem;
-    margin-bottom: 0.15rem;
-    opacity: 0.92;
-}
-
 .skill-tag:hover {
-    background: #000 !important;
-    color: var(--site-bg) !important;
-    border-color: #fff !important;
+    background: #000;
+    color: var(--site-bg);
 }
 
 @media (max-width: 768px) {
@@ -1482,6 +1465,10 @@ body.experience-page main {
         word-break: break-word;
     }
 }
+        padding: 0.3rem 0.65rem;
+    }
+}
+
 /* ── Experience section (one-pager) ─────────────── */
 .experience-section.page-section {
     padding: 0;
