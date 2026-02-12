@@ -1,10 +1,15 @@
+.skill-tag-small:hover {
+    background: #000 !important;
+    color: var(--site-bg) !important;
+    border-color: #fff !important;
+}
 .award-detail {
     display: flex;
     align-items: center;
     font-size: 1.02rem;
     font-weight: 500;
     margin-bottom: 0.18em;
-    color: #c17a00;
+    color: #ce9308; /* matches .exp-honors */
     gap: 0.3em;
 }
 .exp-skills {
@@ -35,14 +40,14 @@
 .hobbies-section.page-section {
     padding: 0;
     padding-top: 0;
-    padding-bottom: 2rem;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    scroll-margin-top: var(--header-h);
-}
-.hobbies-list {
+    .skill-tag-small {
+        font-size: 0.88rem;
+        padding: 0.18rem 0.55rem;
+        border-width: 1px;
+        margin-right: 0.25rem;
+        margin-bottom: 0.15rem;
+        opacity: 0.92;
+    } 
     padding: 1.5rem 3rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1065,6 +1070,7 @@ body.experience-page main {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    margin-top: 1.2rem;
 }
 
 .section-title {
@@ -1433,11 +1439,11 @@ body.experience-page main {
     margin-bottom: 0.15rem;
     opacity: 0.92;
 }
-}
 
 .skill-tag:hover {
-    background: #000;
-    color: var(--site-bg);
+    background: #000 !important;
+    color: var(--site-bg) !important;
+    border-color: #fff !important;
 }
 
 @media (max-width: 768px) {
@@ -1471,7 +1477,6 @@ body.experience-page main {
 }
         padding: 0.3rem 0.65rem;
     }
-}
 
 /* ── Experience section (one-pager) ─────────────── */
 .experience-section.page-section {
