@@ -7,7 +7,9 @@
       "location": "Finland",
       "tags": ["Internship", "Research"],
       "description": ""
-    },
+      ,
+        "skills": ["Python", "Go", "Pytorch", "Reinforcement Learning", "Ansible", "Terraform","Prometheus", "Grafana"]
+      },
     {
       "title": "Ericsson",
       "position": "Research Intern",
@@ -15,7 +17,9 @@
       "location": "Finland",
       "tags": ["Internship", "Research"],
       "description": ""
-    },
+      ,
+        "skills": ["Ansible", "Terraform", "OpenTelemetry"]
+      },
     {
       "title": "Neuroscience Center for Research and Innovation, Learning Institute",
       "position": "Research Assistant",
@@ -23,7 +27,9 @@
       "location": "King Mongkut's University of Technology Thonburi, Thailand",
       "tags": ["Internship", "Research"],
       "description": ""
-    },
+      ,
+        "skills": ["MATLAB","Shell 'Scripting", "Signal Processing", "Data Analysis"]
+      },
     {
       "title": "Institute of High-Performance Computing (IHPC), A*STAR",
       "position": "Research Assistant",
@@ -31,7 +37,9 @@
       "location": "Singapore",
       "tags": ["Internship", "Research"],
       "description": ""
-    }
+      ,
+        "skills": ["Python", "Pytorch","Shell Scripting", "Data Analysis"]
+      }
   ],
   "education": [
     {

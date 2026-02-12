@@ -42,6 +42,24 @@
         if(year) year.textContent = e.year || '';
         if(detailInner) detailInner.textContent = e.description ?? '';
 
+        // Render skill tags if present, under location
+        if (Array.isArray(e.skills) && e.skills.length) {
+          const skillsDiv = document.createElement('div');
+          skillsDiv.className = 'exp-skills';
+          e.skills.forEach(skill => {
+            const tag = document.createElement('span');
+            tag.className = 'skill-tag skill-tag-small';
+            tag.textContent = skill;
+            skillsDiv.appendChild(tag);
+          });
+          // Insert skillsDiv after location
+          if (location && location.parentNode) {
+            location.parentNode.insertBefore(skillsDiv, location.nextSibling);
+          } else {
+            articleEl.insertBefore(skillsDiv, articleEl.firstChild);
+          }
+        }
+
         // append to DOM first so we can measure heights and attach listeners
         container.appendChild(node);
         const articleEl = container.lastElementChild;
