@@ -20,11 +20,19 @@
 
         if(title) {
           title.textContent = e.title || '';
-          if(e.honors){
-            const honorsSpan = document.createElement('span');
-            honorsSpan.className = 'exp-honors';
-            honorsSpan.textContent = '\u00A0*' + e.honors + '*';
-            title.appendChild(honorsSpan);
+        }
+        // Show honors tag under header/title like awardDetail
+        if (e.honors) {
+          const honorsDiv = document.createElement('div');
+          honorsDiv.className = 'exp-honors';
+          honorsDiv.textContent = '*' + e.honors + '*';
+          // Insert below title, above subtitle
+          if (subtitle && subtitle.parentNode) {
+            subtitle.parentNode.insertBefore(honorsDiv, subtitle);
+          } else if (title && title.parentNode) {
+            title.parentNode.insertBefore(honorsDiv, title.nextSibling);
+          } else {
+            articleEl.insertBefore(honorsDiv, articleEl.firstChild);
           }
         }
         //`position` for work items, `subtitle` for other sections
