@@ -5,41 +5,72 @@
       "position": "Master’s Thesis Worker",
       "year": "Mar 2024 - Dec 2024",
       "location": "Finland",
-      "tags": ["Internship", "Research"],
-      "description": ""
-      ,
-        "skills": ["Python", "Go", "Pytorch", "Reinforcement Learning", "Ansible", "Terraform","Prometheus", "Grafana"]
-      },
+      "tags": [
+        "Internship",
+        "Research"
+      ],
+      "description": "",
+      "skills": [
+        "Python",
+        "Go",
+        "Pytorch",
+        "Reinforcement Learning",
+        "Ansible",
+        "Terraform",
+        "Prometheus",
+        "Grafana"
+      ]
+    },
     {
       "title": "Ericsson",
       "position": "Research Intern",
       "year": "May 2023 - Aug 2023",
       "location": "Finland",
-      "tags": ["Internship", "Research"],
-      "description": ""
-      ,
-        "skills": ["Ansible", "Terraform", "OpenTelemetry"]
-      },
+      "tags": [
+        "Internship",
+        "Research"
+      ],
+      "description": "",
+      "skills": [
+        "Ansible",
+        "Terraform",
+        "OpenTelemetry"
+      ]
+    },
     {
       "title": "Neuroscience Center for Research and Innovation, Learning Institute",
       "position": "Research Assistant",
       "year": "Aug 2020 – Aug 2022",
       "location": "KMUTT, Thailand",
-      "tags": ["Internship", "Research"],
-      "description": ""
-      ,
-        "skills": ["MATLAB","Shell Scripting", "Signal Processing", "Data Analysis"]
-      },
+      "tags": [
+        "Internship",
+        "Research"
+      ],
+      "description": "",
+      "skills": [
+        "MATLAB",
+        "Shell Scripting",
+        "Signal Processing",
+        "Data Analysis"
+      ]
+    },
     {
       "title": "Institute of High-Performance Computing (IHPC), A*STAR",
       "position": "Research Assistant",
       "year": "Jun 2019 - Dec 2019",
       "location": "Singapore",
-      "tags": ["Internship", "Research"],
-      "description": ""
-      ,
-        "skills": ["Python", "Pytorch","Shell Scripting", "Data Analysis"]
-      }
+      "tags": [
+        "Internship",
+        "Research"
+      ],
+      "description": "",
+      "skills": [
+        "Python",
+        "Pytorch",
+        "Shell Scripting",
+        "Data Analysis"
+      ]
+    }
   ],
   "education": [
     {
@@ -49,18 +80,21 @@
       "location": "Double degree master programme",
       "honors": "Graduated with Honors",
       "description": "",
-      "tags": ["Master", "Computer Science"],
+      "tags": [
+        "Master",
+        "Computer Science"
+      ],
       "partners": [
         {
           "name": "Aalto University",
           "location": "Finland",
-          "position"  : "Master of Science - MS, Security and Cloud Computing",
+          "position": "Master of Science - MS, Security and Cloud Computing",
           "description": ""
         },
         {
           "name": "EURECOM",
           "location": "France",
-          "position"  : "Master of Science - MS, Security and Cloud Computing",
+          "position": "Master of Science - MS, Security and Cloud Computing",
           "description": ""
         }
       ]
@@ -72,7 +106,10 @@
       "location": "Thailand",
       "honors": "First-Class Honors",
       "description": "Graduated with First Class Honors. Coursework included algorithms, machine learning, and digital signal processing.",
-      "tags": ["Bachelor", "Computer Engineering"]
+      "tags": [
+        "Bachelor",
+        "Computer Engineering"
+      ]
     }
   ],
   "extracurricularActivities": [
@@ -107,7 +144,7 @@
       "location": "Taiwan",
       "position": "Participant",
       "year": "2019",
-     "description": "Selected as one of 25 participants for a language and culture camp focused on learning basic Chinese and exploring Taiwanese culture through lectures and immersive cultural trips."
+      "description": "Selected as one of 25 participants for a language and culture camp focused on learning basic Chinese and exploring Taiwanese culture through lectures and immersive cultural trips."
     },
     {
       "title": "UMAP Discovery Camp",
@@ -121,6 +158,21 @@
       "location": "Thailand",
       "position": "Teacher Assistant of Linux Workshop",
       "year": "2017"
+    }
+  ],
+  "publications": [
+    {
+      "title": "Machine Learning Assisted Dynamic Scheduling for Energy Efficient Serverless Cloud Workloads",
+      "position": "Master's Thesis",
+      "year": "2024",
+      "location": "Ericsson / Aalto University",
+      "description": "Serverless cloud computing can reduce data center energy consumption by turning off idle resources, but scheduling remains challenging when workload resource demands are unknown ahead of deployment. We propose a Deep Q-learning (DQN) scheduler integrated into Kubernetes that consolidates workloads onto fewer active nodes to minimize cluster power consumption, outperforming baselines (Random, Round Robin, Best Fit, Default Kubernetes Scheduler), while revealing an inherent energy–performance tradeoff.",
+      "tags": [
+        "Machine Learning",
+        "Serverless",
+        "Cloud Computing",
+        "Energy Efficiency"
+      ]
     }
   ],
   "achievementsAwards": [
