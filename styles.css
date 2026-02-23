@@ -1403,21 +1403,19 @@ body.experience-page main {
     font-size: 0.95rem;
     font-weight: 600;
     color: #4a6fa5;
-    background: rgba(74, 111, 165, 0.08);
-    border: 1.5px solid rgba(74, 111, 165, 0.35);
+    background: transparent;
+    border: 1.5px solid #4a6fa5;
     border-radius: 2rem;
     padding: 0.3rem 0.85rem 0.3rem 0.65rem;
     text-decoration: none;
-    transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+    transition: background 180ms ease, color 180ms ease;
     white-space: nowrap;
     margin-bottom: 0.4rem;
 }
 
 .scholar-btn:hover {
-    background: rgba(74, 111, 165, 0.15);
-    border-color: #4a6fa5;
-    color: #274d82;
-    transform: translateY(-1px);
+    background: #4a6fa5;
+    color: var(--site-bg);
 }
 
 .scholar-btn::before {
