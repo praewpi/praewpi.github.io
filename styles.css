@@ -69,7 +69,7 @@
 }
 
 .hobby-title {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     font-family: 'Courier New', monospace;
     font-weight: 600;
     color: #333;
@@ -179,7 +179,7 @@
 /* Hobbies section layout*/
 .hobbies-subsections {
     padding: 1.5rem 3rem;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -479,7 +479,7 @@ header {
 }
 
 .logo {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
@@ -559,7 +559,7 @@ nav a,
 .footer-nav a {
     text-decoration: none;
     color: var(--link-color);
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 400;
     position: relative;
     transition: color 0.4s;
@@ -618,7 +618,7 @@ nav a:hover,
     background: none;
     border: none;
     color: #756f6f;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 400;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
@@ -698,7 +698,7 @@ nav a:hover,
     border: none;
     color: #000;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-family: 'Inter', sans-serif;
     text-decoration: underline;
     opacity: 0.6;
@@ -854,7 +854,7 @@ main>.aboutme-wrapper {
     display: flex;
     align-items: flex-start;
     gap: 0rem;
-    max-width: 1200px;
+    max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     padding: 2.5rem 1rem;
@@ -964,7 +964,7 @@ main h1 {
 .aboutme-content .subtitle,
 .aboutme-content .icon-row p {
     font-family: 'Courier New', monospace;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
 }
 
 /* Ginger emoji control */
@@ -1115,7 +1115,7 @@ footer {
 .footer-nav a {
     text-decoration: none;
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: color 0.2s;
 }
 
@@ -1361,7 +1361,7 @@ body.experience-page main {
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 
@@ -1387,9 +1387,9 @@ body.experience-page main {
 
 /* Sub-section titles within the experience section */
 .subsection-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 0;
+    margin-top: 1rem;
     margin-bottom: 0.5rem;
     color: #333;
 }
@@ -1474,7 +1474,7 @@ body.experience-page main {
 
 .exp-item.exp-partner .exp-title {
     /* same size as other titles */
-    font-size: 1.125rem;
+    font-size: 1.2rem;
 }
 
 /* Honors text appended to titles  */
@@ -1497,7 +1497,7 @@ body.experience-page main {
 
 .exp-title {
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1.2rem;
 }
 
 .exp-subtitle {
@@ -1710,10 +1710,10 @@ body.experience-page main {
     display: flex;
     flex-direction: column;
     gap: 2.2rem;
-    margin: 1.5rem auto;
+    margin: 2.5rem auto 1.5rem auto;
     padding-left: 3rem;
     padding-right: 3rem;
-    max-width: 1200px;
+    max-width: 1440px;
 }
 
 .skills-row {
@@ -1731,7 +1731,7 @@ body.experience-page main {
 }
 
 .skills-category {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: #333;
     white-space: nowrap;
@@ -1809,11 +1809,11 @@ padding: 0.3rem 0.65rem;
 
 .experience-subsections {
     padding: 0.75rem 3rem 0.75rem 3rem;
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     text-align: left;
 }
 
