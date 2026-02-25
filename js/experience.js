@@ -21,6 +21,16 @@
         if (title) {
           title.textContent = e.title || '';
         }
+        // Show conference for publications
+        if (containerId === 'publications-list' && e.conference) {
+          const confDiv = document.createElement('div');
+          confDiv.className = 'exp-conference';
+          confDiv.textContent = e.conference;
+          // Insert below title, above subtitle
+          if (title && title.parentNode) {
+            title.parentNode.insertBefore(confDiv, title.nextSibling);
+          }
+        }
         // Show honors tag under header/title like awardDetail
         if (e.honors) {
           const honorsDiv = document.createElement('div');

@@ -161,11 +161,24 @@
     }
   ],
   "publications": [
+  {
+      "title": "Towards Energy-Efficient Serverless Clouds: A Reinforcement Learning-Based Scheduling Approach",
+      "year": "2025",
+      "location": "Ericsson",
+      "conference": "IEEE 17th International Conference on Computational Intelligence and Communication Networks (CICN)",
+      "description": "Proposed a Deep Q-Network (DQN)-based scheduler to improve energy efficiency in serverless cloud computing. Integrated as a Kubernetes plugin, our RL-based approach learns to minimize cluster power consumption and consolidates workloads. Evaluation shows a 9.5% reduction in CPU usage compared to the default scheduler.",
+      "tags": [
+        "Machine Learning",
+        "Serverless",
+        "Cloud Computing",
+        "Energy Efficiency"
+      ]
+    },
     {
       "title": "Machine Learning Assisted Dynamic Scheduling for Energy Efficient Serverless Cloud Workloads",
       "position": "Master's Thesis",
       "year": "2024",
-      "location": "Ericsson / Aalto University",
+      "location": "Ericsson / Aalto University / EURECOM",
       "description": "Serverless cloud computing can reduce data center energy consumption by turning off idle resources, but scheduling remains challenging when workload resource demands are unknown ahead of deployment. We propose a Deep Q-learning (DQN) scheduler integrated into Kubernetes that consolidates workloads onto fewer active nodes to minimize cluster power consumption, outperforming baselines (Random, Round Robin, Best Fit, Default Kubernetes Scheduler), while revealing an inherent energy–performance tradeoff.",
       "tags": [
         "Machine Learning",
