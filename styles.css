@@ -19,10 +19,10 @@
 }
 @media (max-width: 700px) {
     .hobbies-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 2.2rem;
-        margin: 5rem 0 3rem 0;
+           flex-direction: column;
+           align-items: stretch;
+           gap: 3rem;
+           margin: 8rem 0 5rem 0;
     }
 
     .hobby-item {
@@ -219,8 +219,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 3.5rem;
-    margin: 14rem 0 7rem 0;
+        gap: 4.5rem;
+        margin: 18rem 0 10rem 0;
     position: relative;
     flex-wrap: wrap;
     z-index: 1;
@@ -551,7 +551,7 @@ header {
 
 .ginger-logo {
     font-weight: 800 !important;
-    font-size: 1.5rem !important;
+    font-size: 2.2rem !important;
     letter-spacing: 0.06em;
     color: #222;
     font-family: 'Inter', sans-serif;
@@ -1961,6 +1961,30 @@ body.experience-page main {
 }
 
 /* Slider wrapper — hides overflow */
+    /* Sneak peek text in gallery header */
+    .gallery-sneak-peek {
+        font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
+        font-size: 1.05em;
+        color: #6a4a3a;
+        margin-left: 2.5rem;
+        vertical-align: middle;
+        letter-spacing: 0.03em;
+        text-transform: lowercase;
+        opacity: 0.85;
+        display: inline-block;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    @media (max-width: 700px) {
+        .gallery-sneak-peek {
+            display: block;
+            margin-left: 0;
+            margin-top: 0.5rem;
+            font-size: 0.95em;
+            text-align: left;
+        }
+    }
 .gallery-slider-wrapper {
     position: relative;
     width: 100%;
