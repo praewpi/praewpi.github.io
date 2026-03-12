@@ -1,5 +1,6 @@
-// js/skills.js
-// Fetches data/skills.json and renders skill categories + tags into #skills-grid
+/**
+ * skills.js – Fetches data/skills.json and renders skill categories + tags into #skills-grid
+ */
 (async function loadSkills() {
   try {
     const res = await fetch('data/skills.json', { cache: 'no-cache' });

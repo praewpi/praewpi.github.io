@@ -1,4 +1,6 @@
-// Shared header behaviors (connect dropdown)
+/**
+ * Shared header behaviors (connect dropdown)
+ */
 (function(){
     function attachConnect(){
         const connectBtn = document.getElementById('connect-btn');

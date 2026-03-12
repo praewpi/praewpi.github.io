@@ -1,3 +1,6 @@
+/**
+ * mouse_spot.js – Animated mouse spot effect on canvas
+ */
 (function(){
     const canvas = document.getElementById('mouse-spot-canvas');
     if(!canvas) return;

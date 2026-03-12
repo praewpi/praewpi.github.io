@@ -1,4 +1,7 @@
- (function(){
+/**
+ * script_canvas.js – Handles canvas drawing and connect dropdown menu
+ */
+(function(){
     // Connect dropdown menu
     const connectBtn = document.getElementById('connect-btn');
     const connectMenu = document.getElementById('connect-menu');

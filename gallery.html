@@ -1,0 +1,55 @@
+<!-- gallery.html — loaded into #gallery-section via includeHTML -->
+<section id="gallery" class="page-section gallery-section">
+    <hr id="gallery-top" class="skills-line">
+    <div class="skills-header">
+        <h2 class="section-title">photo gallery</h2>
+    </div>
+    <hr class="skills-line">
+
+    <!-- Draggable slider area -->
+    <div class="gallery-inner">
+        <div class="gallery-slider-wrapper">
+            <div class="gallery-track" id="gallery-track">
+                <!-- Cards injected by gallery.js from data/gallery.json -->
+            </div>
+        </div>
+
+        <!-- Navigation arrows + progress bar in one row -->
+        <div class="gallery-nav">
+            <button class="gallery-nav-btn gallery-prev" id="gallery-prev" aria-label="Previous">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>BACK</span>
+            </button>
+            <div class="gallery-progress-wrapper">
+                <div class="gallery-progress-bar" id="gallery-progress-bar"></div>
+            </div>
+            <button class="gallery-nav-btn gallery-next" id="gallery-next" aria-label="Next">
+                <span>NEXT</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox overlay — appended at body level by gallery.js for proper z-index -->
+<template id="gallery-lightbox-tpl">
+    <div class="gallery-lightbox" id="gallery-lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <img id="lightbox-img" src="" alt="Full-size photo" />
+        <div class="lightbox-location" id="lightbox-location"></div>
+    </div>
+</template>

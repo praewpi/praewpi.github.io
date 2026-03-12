@@ -1,4 +1,6 @@
-// movable_profile.js
+/**
+ * movable_profile.js – Movable profile card with drag and drop
+ */
 (function () {
     function clamp(v, a, b) { return Math.min(Math.max(v, a), b); }
 

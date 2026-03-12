@@ -1,3 +1,6 @@
+/**
+ * smooth_follower.js – Smooth mouse follower animation
+ */
 (function(){
   // Smooth Follower 
   const DOT_SMOOTHNESS = 0.5; // how fast the inner dot follows (increased for snappier response)

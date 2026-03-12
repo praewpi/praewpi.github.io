@@ -1,0 +1,62 @@
+[
+    {
+        "src": "photos/optimize/photo1.jpg",
+        "thumb": "photos/thumbs/photo1.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo2.jpg",
+        "thumb": "photos/thumbs/photo2.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo3.jpg",
+        "thumb": "photos/thumbs/photo3.jpg",
+        "location": "Chonburi, Thailand",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo4.jpg",
+        "thumb": "photos/thumbs/photo4.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo5.jpg",
+        "thumb": "photos/thumbs/photo5.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo6.jpg",
+        "thumb": "photos/thumbs/photo6.jpg",
+        "location": "Tallin, Estonia",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo7.jpg",
+        "thumb": "photos/thumbs/photo7.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo8.jpg",
+        "thumb": "photos/thumbs/photo8.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo9.jpg",
+        "thumb": "photos/thumbs/photo9.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    },
+    {
+        "src": "photos/optimize/photo10.jpg",
+        "thumb": "photos/thumbs/photo10.jpg",
+        "location": "Helsinki, Finland",
+        "caption": ""
+    }
+]

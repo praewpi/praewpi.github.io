@@ -1,5 +1,6 @@
-// js/experience.js
-// Fetches data/experience.json and renders into templates in experience.html
+/**
+ * experience.js – Fetches data/experience.json and renders into templates in experience.html
+ */
 (async function loadExperience() {
   try {
     const res = await fetch('data/experience.json', { cache: 'no-cache' });

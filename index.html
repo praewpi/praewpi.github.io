@@ -30,6 +30,9 @@
 
         <!-- Hobbies Section (loaded from hobbies.html) -->
         <div id="hobbies-section"></div>
+
+        <!-- Photo Gallery Section (loaded from gallery.html) -->
+        <div id="gallery-section"></div>
     </main>
 
     <!-- Canvas for ginger drawing – at body level so it spans the full page -->
@@ -66,7 +69,13 @@
             // load shared header behaviors (connect dropdown) and drawing script
             const h = document.createElement('script');
             h.src = 'js/header.js';
-            h.onload = function () { if (window.attachConnect) window.attachConnect(); };
+            h.onload = function () {
+                if (window.attachConnect) window.attachConnect();
+                // Nav highlight – sliding pill effect
+                const nh = document.createElement('script');
+                nh.src = 'js/nav_highlight.js';
+                document.body.appendChild(nh);
+            };
             document.body.appendChild(h);
 
             const s = document.createElement('script');
@@ -101,6 +110,12 @@
 
             // load hobbies section HTML
             await includeHTML('hobbies-section', 'hobbies.html');
+
+            // load photo gallery section HTML, then init slider
+            await includeHTML('gallery-section', 'gallery.html');
+            const gl = document.createElement('script');
+            gl.src = 'js/gallery.js';
+            document.body.appendChild(gl);
 
             // env + likes (env must load first so likes.js can read window.__ENV__)
             const env = document.createElement('script');
