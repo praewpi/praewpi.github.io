@@ -1960,8 +1960,8 @@ body.experience-page main {
     padding: 0.75rem 3rem 0.75rem 3rem;
 }
 
-/* Slider wrapper — hides overflow */
-    /* Sneak peek text in gallery header */
+
+    /* right text in gallery header */
     .gallery-sneak-peek {
         font-family: 'Fira Mono', 'Menlo', 'Monaco', monospace;
         font-size: 1.05em;
