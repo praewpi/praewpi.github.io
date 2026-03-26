@@ -77,6 +77,11 @@
     z-index: 2;
 }
 
+a.hobby-interactive {
+    text-decoration: none;
+    color: inherit;
+}
+
 .hobby-icon-img {
     width: 48px;
     height: 48px;
@@ -193,6 +198,23 @@
     font-family: 'Reenie Beanie', cursive;
     letter-spacing: 0.01em;
     z-index: 10;
+}
+
+/* Painting preview photos */
+.painting-preview {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.painting-preview-img {
+    width: 280px;
+    height: 187px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
 }
 
 /* Hobbies section layout*/

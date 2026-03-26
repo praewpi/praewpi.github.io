@@ -59,6 +59,7 @@
 
   // also consider experience list entries as clickable targets
   hoverSelectors.push('.exp-item');
+  hoverSelectors.push('.hobby-link');
 
   const matchesHover = (el) => {
     if(!el) return false;
