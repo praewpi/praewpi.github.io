@@ -27,6 +27,10 @@
         const navPill = document.querySelector('.nav-pill');
         if(!toggle || !navPill) return;
 
+        // Prevent duplicate listeners on repeated calls
+        if(toggle._navToggleAttached) return;
+        toggle._navToggleAttached = true;
+
         toggle.addEventListener('click', function(){
             navPill.classList.toggle('nav-open');
             const isOpen = navPill.classList.contains('nav-open');
