@@ -1,5 +1,5 @@
 /**
- * Shared header behaviors (connect dropdown)
+ * Shared header behaviors (connect dropdown + mobile nav toggle)
  */
 (function(){
     function attachConnect(){
@@ -22,9 +22,33 @@
         connectMenu.addEventListener('click', function(e){ e.stopPropagation(); });
     }
 
-    // Run immediately (works whether header was injected before or after script runs)
+    function attachNavToggle(){
+        const toggle = document.getElementById('nav-toggle');
+        const navPill = document.querySelector('.nav-pill');
+        if(!toggle || !navPill) return;
+
+        toggle.addEventListener('click', function(){
+            navPill.classList.toggle('nav-open');
+            const isOpen = navPill.classList.contains('nav-open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close mobile nav when a nav link is clicked
+        navPill.querySelectorAll('.nav-item:not(.home-link)').forEach(function(item){
+            item.addEventListener('click', function(){
+                if(window.innerWidth <= 768){
+                    navPill.classList.remove('nav-open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
+
+    // Run immediately
     attachConnect();
+    attachNavToggle();
 
     // Expose for manual re-attach if needed
     window.attachConnect = attachConnect;
+    window.attachNavToggle = attachNavToggle;
 })();

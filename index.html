@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Praewpiraya Wiwatphonthana (Ginger) — MSc in Security & Cloud Computing. Portfolio showcasing skills, experience, and hobbies.">
     <title>Ginger - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <a href="#about" class="skip-link">Skip to main content</a>
     <div id="site-header"></div>
 
     <!-- Main Content -->
@@ -71,6 +73,7 @@
             h.src = 'js/header.js';
             h.onload = function () {
                 if (window.attachConnect) window.attachConnect();
+                if (window.attachNavToggle) window.attachNavToggle();
                 // Nav highlight – sliding pill effect
                 const nh = document.createElement('script');
                 nh.src = 'js/nav_highlight.js';
