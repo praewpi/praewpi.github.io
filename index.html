@@ -52,9 +52,16 @@
             } catch (e) {/* fail silently */ }
         }
 
+        function updateFooterYear() {
+            const yearEl = document.getElementById('copyright-year');
+            if (!yearEl) return;
+            yearEl.textContent = new Date().getFullYear();
+        }
+
         async function init() {
             await includeHTML('site-header', 'header.html');
             await includeHTML('site-footer', 'footer.html');
+            updateFooterYear();
 
             // Measure actual header height (sticky wrapper) and set CSS variable
             const siteHeader = document.getElementById('site-header');
