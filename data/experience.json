@@ -161,12 +161,12 @@
     }
   ],
   "publications": [
-  {
+    {
       "title": "Towards Energy-Efficient Serverless Clouds: A Reinforcement Learning-Based Scheduling Approach",
       "year": "2025",
-      "location": "Ericsson",
+      "location": "Ericsson, Finland",
       "conference": "IEEE 17th International Conference on Computational Intelligence and Communication Networks (CICN)",
-      "description": "Proposed a Deep Q-Network (DQN)-based scheduler to improve energy efficiency in serverless cloud computing. Integrated as a Kubernetes plugin, our RL-based approach learns to minimize cluster power consumption and consolidates workloads. Evaluation shows a 9.5% reduction in CPU usage compared to the default scheduler.",
+      "description": "Proposed a Deep Q-Network (DQN)-based scheduler for energy-efficient serverless cloud workloads. Implemented as a Kubernetes plugin, the approach learns to consolidate workloads onto fewer active nodes to reduce cluster power consumption, achieving a 9.5% reduction in CPU usage compared with the default scheduler.",
       "tags": [
         "Machine Learning",
         "Serverless",
@@ -179,12 +179,26 @@
       "position": "Master's Thesis",
       "year": "2024",
       "location": "Ericsson / Aalto University / EURECOM",
-      "description": "Serverless cloud computing can reduce data center energy consumption by turning off idle resources, but scheduling remains challenging when workload resource demands are unknown ahead of deployment. We propose a Deep Q-learning (DQN) scheduler integrated into Kubernetes that consolidates workloads onto fewer active nodes to minimize cluster power consumption, outperforming baselines (Random, Round Robin, Best Fit, Default Kubernetes Scheduler), while revealing an inherent energy–performance tradeoff.",
+      "description": "Investigated machine learning-assisted scheduling for energy-efficient serverless cloud workloads under uncertain resource demands. The thesis presents a Deep Q-learning (DQN) scheduler integrated into Kubernetes that consolidates workloads onto fewer active nodes, outperforming baseline schedulers while highlighting the tradeoff between energy savings and application performance.",
       "tags": [
         "Machine Learning",
         "Serverless",
         "Cloud Computing",
         "Energy Efficiency"
+      ]
+    },
+    {
+      "title": "Two-phase multi-party computation enabled privacy-preserving federated learning",
+      "position": "Co-author",
+      "year": "2020",
+      "location": "IHPC, A*STAR, Singapore",
+      "conference": "IEEE 20th ACM International Symposium on Cluster, Cloud and Internet Computing (CCGRID)",
+      "description": "Proposed a privacy-preserving federated learning framework in which participants keep raw data on their own premises while multi-party computation (MPC) secures the model aggregation process. To improve the scalability of peer-to-peer MPC, the work introduces a two-phase approach that elects a small committee to perform aggregation for a larger group of participants, preserving model quality while reducing communication cost and execution time.",
+      "tags": [
+        "Federated Learning",
+        "Privacy-Preserving Machine Learning",
+        "Multi-Party Computation",
+        "Distributed Systems"
       ]
     }
   ],
