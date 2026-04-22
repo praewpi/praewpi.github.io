@@ -983,6 +983,19 @@ main h1 {
     background: var(--site-bg);
 }
 
+.extra-group-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999;
+    padding: 0.6rem 0.5rem 0.3rem;
+}
+
+.extra-group-sep {
+    margin: 1rem 0 0.25rem;
+}
+
 .exp-item.exp-partner {
     padding-left: 1.6rem;
     border-left: 2px solid rgba(0, 0, 0, 0.03);

@@ -226,7 +226,27 @@
     };
 
     if (Array.isArray(data.workExperience)) renderList(data.workExperience, 'experience-list');
-    if (Array.isArray(data.extracurricularActivities)) renderList(data.extracurricularActivities, 'extracurricular-list');
+    if (Array.isArray(data.extracurricularActivities)) {
+      const container = document.getElementById('extracurricular-list');
+      if (container) {
+        data.extracurricularActivities.forEach((group, gi) => {
+          if (gi > 0) {
+            const groupSep = document.createElement('hr');
+            groupSep.className = 'divider extra-group-sep';
+            container.appendChild(groupSep);
+          }
+          const groupHeader = document.createElement('div');
+          groupHeader.className = 'extra-group-header';
+          groupHeader.textContent = group.group || '';
+          container.appendChild(groupHeader);
+          const tempId = `extra-group-${gi}`;
+          const tempContainer = document.createElement('div');
+          tempContainer.id = tempId;
+          container.appendChild(tempContainer);
+          renderList(group.items || [], tempId);
+        });
+      }
+    }
     if (Array.isArray(data.achievementsAwards)) renderList(data.achievementsAwards, 'achievements-list');
     if (Array.isArray(data.education)) renderList(data.education, 'education-list');
     if (Array.isArray(data.publications)) renderList(data.publications, 'publications-list');
