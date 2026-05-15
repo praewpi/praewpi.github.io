@@ -1,6 +1,27 @@
 /**
  * skills.js – Fetches data/skills.json and renders skill categories + tags into #skills-grid
  */
+
+function loadCredlyEmbed() {
+  const badge = document.querySelector('.credly-badge');
+  if (!badge) return;
+
+  if (window.CredlyBadge) {
+    if (typeof window.CredlyBadge.init === 'function') {
+      window.CredlyBadge.init();
+    }
+    return;
+  }
+
+  if (document.querySelector('script[data-credly-embed="true"]')) return;
+
+  const script = document.createElement('script');
+  script.src = 'https://cdn.credly.com/assets/utilities/embed.js';
+  script.async = true;
+  script.dataset.credlyEmbed = 'true';
+  document.body.appendChild(script);
+}
+
 (async function loadSkills() {
   try {
     const res = await fetch('data/skills.json', { cache: 'no-cache' });
@@ -37,5 +58,7 @@
     });
   } catch (err) {
     console.error('skills.js:', err);
+  } finally {
+    loadCredlyEmbed();
   }
 })();

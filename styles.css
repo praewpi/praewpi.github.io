@@ -782,6 +782,37 @@ main h1 {
     text-align: left;
 }
 
+.skills-badge-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 0 auto 2.5rem auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 1440px;
+    text-align: left;
+}
+
+.skills-badge-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skills-badge-note {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+.skills-badge-card {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+}
+
 .skills-row {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -793,6 +824,13 @@ main h1 {
     .skills-row {
         grid-template-columns: 1fr;
         gap: 0.6rem;
+    }
+
+    .skills-badge-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
@@ -841,6 +879,11 @@ main h1 {
         padding-left: 1rem;
         padding-right: 1rem;
         gap: 1.5rem;
+    }
+
+    .skills-badge-card {
+        width: 100%;
+        justify-content: center;
     }
 
     .skill-tag {
